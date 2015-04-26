@@ -14,7 +14,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
                 <configuration>
-                    <mainClass>sk.svec.jan.webdetection.main.WebDetectionMain</mainClass>
+                    <mainClass>sk.svec.jan.acb.main.WebDetectionMain</mainClass>
                 </configuration>
             </plugin>   
             <!-- plugin na vytvorenie jar suboru
@@ -27,7 +27,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>sk.svec.jan.webdetection.main.WebDetectionMain</mainClass>
+                            <mainClass>sk.svec.jan.acb.main.WebDetectionMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -49,7 +49,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>sk.svec.jan.webdetection.main.WebDetectionMain</mainClass>
+                            <mainClass>sk.svec.jan.acb.main.WebDetectionMain</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
