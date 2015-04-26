@@ -5,7 +5,7 @@
     <artifactId>acb</artifactId>
     <packaging>war</packaging>
     <version>1.0.1</version>
-    <name>automatic corpora builder</name>
+    <name>author corpora builder</name>
     
     <build>
         <plugins>
