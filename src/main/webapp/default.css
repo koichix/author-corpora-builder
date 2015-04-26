@@ -1,0 +1,197 @@
+*{
+    margin: auto;
+
+
+}
+
+
+root {
+    display: block;   
+}
+.telo{
+    background-color:white;
+    width: 800px;
+    padding: 15px;
+    border:1px solid #BDBDBD;
+    height:auto;
+    padding:25px;
+    border-radius: 10px;
+    padding-bottom:50px;
+}
+
+body {
+    font-family: georgia, Arial, Tahoma, Verdana;
+
+    background-color:#F2F2F2;
+
+}
+
+
+
+h1 {
+    font-family: Evolution;
+    text-align: center;
+    font-size: 36px;
+    color:#424242;
+}
+
+h2 {
+    font-family:Arial;
+    text-align: center;
+    font-size: 14px;
+    color: #58585B;
+    font-weight: normal;
+}
+
+h3{
+    text-align: left;
+    font-family:Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color:black;
+}
+
+h4 {
+    font-family:Arial;
+    text-align: left;
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+
+}
+
+
+a:link {
+    color:white ;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#0B0B61;
+    text-decoration: none;
+}
+
+
+a:visited {   
+    color: black;               
+    text-decoration: none;
+}
+
+
+
+.popis {
+    height: auto;
+    width: 700px;
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+    background-color:#c6f1ef;
+    border-radius:5px;
+    padding:10px;
+
+}
+
+.popis2 {
+    height: auto;
+    width: 700px;
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+    background-color:#a1cff2;
+    border-radius:5px;
+    padding:10px;
+    border:0px solid #F5DA81;
+
+}
+
+thead {
+    background-color: white;
+    font-weight: bold;
+}
+
+th {
+    text-align: right;
+    padding-right: 10px;
+    font-weight:normal !important;
+    font-family: Arial;
+    font-size: 14px;
+    padding-bottom:10px;
+
+}
+
+tr.odd {
+    background-color: white;
+    font-family: Arial;
+    font-size: 14px;
+    height: 22px;
+
+}
+
+tr.even {
+    background-color: #E0F8F7;
+    font-family: Arial;
+    font-size: 14px;
+    height: 22px;
+}
+
+td {
+    width: 50%;
+}
+
+.error {
+    border: solid 1px red;
+    width:700px;
+    height:20px;
+    background-color:#f0a968 !IMPORTANT;
+    padding: 10px;
+}
+
+.link{
+    width: 410px !important;
+    border-radius:30px; 
+    padding-left: 3px;
+    padding-right: 3px;      
+}
+
+.nastavenia{
+    float: right;
+    margin-top: -60px;
+    background-image:url(/settings1.png);
+    height:35px;
+    width:35px;
+
+}
+
+.footer{
+    font-family: Arial;
+    font-size: 14px;
+    padding-top:5px;
+
+}
+
+.jq{
+    color:#2e6e9e !important;
+}
+
+.vzor{
+    word-spacing: 5px;
+}
+ul {
+    list-style-type: none
+}
+table{
+    border-collapse: collapse;
+}
+table tr td{
+  
+    padding-right: 7px;
+}
+table tr td input[type=text]{
+    width: 400px;
+}
+table tr td input[type=checkbox]{
+    margin-top: 5px;
+}
+#tabs{
+    width:710px;
+}

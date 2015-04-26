@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Copyright 2015 Ján Švec
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+    <head>
+        <title>Change log</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Change log</h1>
+        <h2>Legenda</h2>
+        <p>Crawler CR, Cleaner CL, Finder FI, Rozhranie RO, Site Style Tree SST</p>
+        
+        <h3>version 1.0.1</h3>
+        <ul>
+            <li>28.3</li>
+            <li>SST: oprava chyby - vytvaranie duplicitnych textov</li>
+        </ul> 
+
+        <h3>version 1.0</h3>
+        <ul>
+            <li>SST: pridal som zvysenie node importance(pre autora atd)</li>            
+            <li>FI: vycistenie od hluposti pod 20 znakov</li>
+            <li>FI: ukladanie xml suborov pod menom autora</li>
+            <li>CL: do htmlcleaneru sme pridali img</li>
+            <li>FI: slovo DATE hlada iba v atributoch prvkov, nie v texte</li>
+            <li>CR: nahodena nova verzia kniznice, ktora musela ist do hlavneho priecinku kvoli tomu ze som ju musel upravit a aj kvoli tomu ze nieje v mavene</li>
+        </ul>
+        <ul>
+            <li>17.12</li>
+            <li>FI: dorobene ukladanie autorov fora do jedneho priecinka</li>
+            <li>RO: zapnute prepinanie forum/clanok</li>
+            <li>CR: nastaveny user agent na chrome, aby to netahalo androidy-- taha aj tak, asi zato ze su nejak  naprd vo fore zakodovane v novom case</li>
+            <li>CR: dat moznost obmedzit na cast linku (zaskrkavatko true, text s castou linku) pre lepsiu presnost..</li>
+            <li>CR: dat do moznosti prah</li>
+            <li>CR: moznost ist do urcitej hlbky</li>
+        </ul> 
+        <ul>
+            <li>20.12
+            <li>zazipovat priecinok s autormi</li>
+            <li>vysledky nacitat z priecinka</li>
+            <li>RO: skryt hlbku pri vlastnom url - v nastaveniach na webe</li>
+            <li>RO: cely alg / stahovanie a analyza zvlast</li>
+            <li>RO: spustanie programu cez konzolu : mvn exec:java -Dexec.args="http://www.cas.sk n"</li>
+        </ul>
+        <ul>  
+            <li>21.12</li>
+            <li>CL: odstranenie tagov neviditelnych pre uzivatela, [style=display:none] [style=visibility:hidden] [class=hidden] [type=hidden] , prve dva su styly, druhe je vlastny styl, tretie je pri inputoch (napr tento ma hash, daktore id)</li>
+            <li>FI: odstranenie tagov z vysledkov (z autora a datumu)</li>
+            <li>FI: odstranit slovo "autor: " z vysledkov, tak ze najdeme dvojbodku a odstranime text pred nou</li>
+            <li>FI: odstranit slovo "datum:", "napisane dna" a podobne tak, ze datum prejdeme znova regularnym vyrazom a zachovame len ten</li>
+            <li>FI: zahodit subory, ktore neobsahuju autora, logovat zahodene subory v "deletedLinksLog.xml"</li>
+            <li>RO: vlozit predchystane priklady</li>    
+            <li>
+                FI: zlepsit heuristiku na vyhladavanie:
+                autor: 
+                - najskor autor v ID=AUTOR
+                - potom v texte slovo AUTOR: alebo "napsal" "vlozil"
+                - slovo končiace ová je dobrá heuristika
+            </li>
+            <li>
+                datum:
+                - najskor id = date,
+                - potom reg vyraz na to kde sme boli
+            </li>
+        </ul>
+    </body>
+</html>
