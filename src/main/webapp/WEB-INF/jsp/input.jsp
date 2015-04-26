@@ -56,7 +56,7 @@
     </head>
     <body>
         <div class="telo">
-            <h1>Web Structure Detection</h1>           
+            <h1>Authorship corpora builder</h1>           
             <h2>Aplikácia na automatické extrahovanie informácií z internetových článkov</h2>
             <a href="<c:url value="/settings"/>" class="nastavenia" title="Nastavenia"></a>
             <br/>
