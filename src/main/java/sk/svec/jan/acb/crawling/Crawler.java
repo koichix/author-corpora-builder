@@ -22,7 +22,7 @@ import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
 import edu.uci.ics.crawler4j.url.WebURL;
 import java.util.List;
-import sk.svec.jan.acb.main.WebDetectionMain;
+import sk.svec.jan.acb.main.Main;
 
 /**
  *
@@ -52,7 +52,7 @@ public class Crawler {
          * Be polite: Make sure that we don't send more than 1 request per
          * second (1000 milliseconds between requests).
          */
-        config.setPolitenessDelay(Integer.parseInt(WebDetectionMain.getResourceBundle().getString("PolitenessDelay")));
+        config.setPolitenessDelay(Integer.parseInt(Main.getResourceBundle().getString("PolitenessDelay")));
         config.setMaxPagesToFetch(-1);
 
         config.setUserAgentString("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36");

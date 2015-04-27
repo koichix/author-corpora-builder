@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static java.util.regex.Pattern.CASE_INSENSITIVE;
 import org.jsoup.nodes.Node;
-import sk.svec.jan.acb.main.WebDetectionMain;
+import sk.svec.jan.acb.main.Main;
 
 /**
  *
@@ -73,7 +73,7 @@ public class ElementNode {
             nodeImp = 1;
         }
 
-        if (!WebDetectionMain.diskusia) {
+        if (!Main.diskusia) {
             //priradenie priority explicitne
             //datum    
             Pattern datePattern = Pattern.compile("date|datum|dátum", CASE_INSENSITIVE);

@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Web Structure Detection</title>
+        <title>Authorship corpora builder</title>
         <link rel="stylesheet" href="<c:url value="/default.css"/>" type="text/css">
         <script src="<c:url value="/jquery/external/jquery/jquery.js"/>"></script>
         <script src="<c:url value="/jquery/jquery-ui.js"/>"></script>

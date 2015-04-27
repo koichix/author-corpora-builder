@@ -33,7 +33,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import org.apache.commons.codec.binary.Hex;
-import sk.svec.jan.acb.main.WebDetectionMain;
+import sk.svec.jan.acb.main.Main;
 
 /**
  *
@@ -44,7 +44,7 @@ public class CrawlerConfig extends WebCrawler {
     private static int count;
     private boolean forum;
     private MessageDigest md;
-    private int depth = Integer.parseInt(WebDetectionMain.getResourceBundle().getString("MaxDepth"));
+    private int depth = Integer.parseInt(Main.getResourceBundle().getString("MaxDepth"));
     private final static Pattern FILTERS = Pattern.compile(".*(\\.(css|js|bmp|gif|jpe?g"
             + "|png|tiff?|mid|mp2|mp3|mp4"
             + "|wav|avi|mov|mpeg|ram|m4v|pdf"
@@ -105,8 +105,8 @@ public class CrawlerConfig extends WebCrawler {
     @Override
     public void visit(Page page) {
         System.out.println(count);
-        System.out.println(WebDetectionMain.getResourceBundle().getString("MaxPagesToFetch"));
-        if (count >= Integer.parseInt(WebDetectionMain.getResourceBundle().getString("MaxPagesToFetch"))) {
+        System.out.println(Main.getResourceBundle().getString("MaxPagesToFetch"));
+        if (count >= Integer.parseInt(Main.getResourceBundle().getString("MaxPagesToFetch"))) {
             CrawlController myController = getMyController();
             myController.shutdown();
             myController.getPageFetcher().shutDown();
@@ -124,8 +124,8 @@ public class CrawlerConfig extends WebCrawler {
                 String path = "output" + File.separator + createDirStructure(jUrl, depth) + "downloaded" + File.separator;
                 String path2 = "output" + File.separator + createDirStructure(jUrl, depth) + "links" + File.separator;
                 System.out.println(path);
-                if (Boolean.parseBoolean(WebDetectionMain.getResourceBundle().getString("CustomUrlSet"))) {
-                    if (url.startsWith(WebDetectionMain.getResourceBundle().getString("CustomUrl"))) {
+                if (Boolean.parseBoolean(Main.getResourceBundle().getString("CustomUrlSet"))) {
+                    if (url.startsWith(Main.getResourceBundle().getString("CustomUrl"))) {
                         new File(path).mkdirs(); //create directory
                         new File(path2).mkdirs(); //create directory
                     }
@@ -161,9 +161,9 @@ public class CrawlerConfig extends WebCrawler {
 
                     try {
                         try {
-                            if (Boolean.parseBoolean(WebDetectionMain.getResourceBundle().getString("CustomUrlSet"))) {
+                            if (Boolean.parseBoolean(Main.getResourceBundle().getString("CustomUrlSet"))) {
 
-                                if (url.startsWith(WebDetectionMain.getResourceBundle().getString("CustomUrl"))) {
+                                if (url.startsWith(Main.getResourceBundle().getString("CustomUrl"))) {
 
                                     String filename;
                                     if (forum) {

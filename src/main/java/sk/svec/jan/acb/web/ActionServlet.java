@@ -28,7 +28,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import sk.svec.jan.acb.main.WebDetectionMain;
+import sk.svec.jan.acb.main.Main;
 import sk.svec.jan.acb.utility.Setting;
 
 /**
@@ -58,13 +58,13 @@ public class ActionServlet extends HttpServlet {
     static final String JSP_SETTINGS = "/WEB-INF/jsp/settings.jsp";
     static final String JSP_OUTPUT = "/WEB-INF/jsp/output.jsp";
 
-    private WebDetectionMain webDetectionMain = new WebDetectionMain();
+    private Main main = new Main();
 
     private void output(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.setAttribute("info", webDetectionMain.getOutputInfo());
-        request.setAttribute("zip", webDetectionMain.getZipPath());
+        request.setAttribute("info", main.getOutputInfo());
+        request.setAttribute("zip", main.getZipPath());
         try {
-            request.setAttribute(ATTRIBUTE_OUTPUTS, webDetectionMain.getOutput());
+            request.setAttribute(ATTRIBUTE_OUTPUTS, main.getOutput());
         } catch (Exception ex) {
             Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -136,7 +136,7 @@ public class ActionServlet extends HttpServlet {
                 try {
 
 //                    webDetectionMain.start(disc);
-                    webDetectionMain.analyze(disc);
+                    main.analyze(disc);
                 } catch (Exception ex) {
                     Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -149,10 +149,10 @@ public class ActionServlet extends HttpServlet {
                     request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
                     request.getRequestDispatcher(JSP_INPUT).forward(request, response);
                 } else {
-                    webDetectionMain.setSeeds(seeds);
+                    main.setSeeds(seeds);
                     try {
 //                    webDetectionMain.start(disc);
-                        webDetectionMain.crawl(disc);
+                        main.crawl(disc);
                     } catch (Exception ex) {
                         Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -194,12 +194,12 @@ public class ActionServlet extends HttpServlet {
                 } else {
                     settings.setSetting4("false");
                 }
-                webDetectionMain.setSettings(settings);
+                main.setSettings(settings);
                 response.sendRedirect(request.getContextPath());
             }
 
         } else {
-            request.setAttribute(ATTRIBUTE_SETTINGS_FORM, webDetectionMain.getSettings());
+            request.setAttribute(ATTRIBUTE_SETTINGS_FORM, main.getSettings());
 //            request.setAttribute(ATTRIBUTE_SETTINGS_FORM, new SettingsForm());
             request.getRequestDispatcher(JSP_SETTINGS).forward(request, response);
         }

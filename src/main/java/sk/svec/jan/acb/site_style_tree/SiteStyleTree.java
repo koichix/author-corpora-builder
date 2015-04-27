@@ -23,7 +23,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Entities;
 import org.jsoup.nodes.Node;
-import sk.svec.jan.acb.main.WebDetectionMain;
+import sk.svec.jan.acb.main.Main;
 import sk.svec.jan.acb.utility.FourReturn;
 
 /**
@@ -34,7 +34,7 @@ public class SiteStyleTree {
 
     private int allPagesCount;
     private Node rootNode;
-    private static final double THRESHOLD = Double.parseDouble(WebDetectionMain.getResourceBundle().getString("Threshold")); //prah
+    private static final double THRESHOLD = Double.parseDouble(Main.getResourceBundle().getString("Threshold")); //prah
 
     public SiteStyleTree(String path) throws Exception {
         this.allPagesCount = 1;

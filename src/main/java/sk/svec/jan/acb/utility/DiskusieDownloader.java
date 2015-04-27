@@ -17,7 +17,7 @@ package sk.svec.jan.acb.utility;
 
 import java.util.ArrayList;
 import java.util.List;
-import sk.svec.jan.acb.main.WebDetectionMain;
+import sk.svec.jan.acb.main.Main;
 
 /**
  *
@@ -39,7 +39,7 @@ public class DiskusieDownloader {
         boolean diskusia = true; //false = clanok, true =diskusia
 
         //nemenit
-        WebDetectionMain wdm = new WebDetectionMain();
+        Main wdm = new Main();
         wdm.setSettings(setting);
         wdm.setSeeds(link);
         if (stahuj) {

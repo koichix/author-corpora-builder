@@ -50,7 +50,7 @@ import sk.svec.jan.acb.utility.TravelDirectory;
  *
  * @author Ján Švec
  */
-public class WebDetectionMain {
+public class Main {
 
     private List<String> seeds;
     private Setting settings;
@@ -66,7 +66,7 @@ public class WebDetectionMain {
         try {
             urls = new URL[]{file.toURI().toURL()};
         } catch (MalformedURLException ex) {
-            Logger.getLogger(WebDetectionMain.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         ClassLoader loader = new URLClassLoader(urls);
 
@@ -116,7 +116,7 @@ public class WebDetectionMain {
         c.saveProperties(settings);
     }
 
-    public WebDetectionMain() {
+    public Main() {
         //create properties files
         new File("src/resources/").mkdirs();
         ConfigCreator configCreator = new ConfigCreator();
@@ -410,7 +410,7 @@ public class WebDetectionMain {
                     errs.hasNext();) {
                 System.err.println("Chyba: " + errs.next());
             }
-            System.err.println("Použitie: java " + WebDetectionMain.class.getName());
+            System.err.println("Použitie: java " + Main.class.getName());
             System.err.println(jsap.getUsage());
             System.err.println();
             System.err.println(jsap.getHelp());
@@ -423,7 +423,7 @@ public class WebDetectionMain {
             System.out.println(jsap.getHelp());
         }
 
-        WebDetectionMain wdm = new WebDetectionMain();
+        Main wdm = new Main();
         if (config.getBoolean("vymaz")) {
             System.out.println("mazem priecinok");
             wdm.clean();
