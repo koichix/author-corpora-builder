@@ -30,6 +30,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import sk.svec.jan.acb.main.Main;
 import sk.svec.jan.acb.utility.Setting;
+import sk.svec.jan.acb.utility.ViewXML;
 
 /**
  *
@@ -38,8 +39,10 @@ import sk.svec.jan.acb.utility.Setting;
 @WebServlet(
         name = "ActionServlet",
         urlPatterns = {
+            ActionServlet.ACTION_PREVIEW,
             ActionServlet.ACTION_OUTPUT,
-            ActionServlet.ACTION_SETTINGS, ActionServlet.ACTION_GETFILE,
+            ActionServlet.ACTION_SETTINGS,
+            ActionServlet.ACTION_GETFILE,
             ActionServlet.ACTION_INPUT})
 public class ActionServlet extends HttpServlet {
 
@@ -47,6 +50,7 @@ public class ActionServlet extends HttpServlet {
     static final String ACTION_OUTPUT = "/output";
     static final String ACTION_SETTINGS = "/settings";
     static final String ACTION_GETFILE = "/getfile";
+    static final String ACTION_PREVIEW = "/preview";
 
     static final String ATTRIBUTE_OUTPUTS = "outputs";
 
@@ -57,8 +61,25 @@ public class ActionServlet extends HttpServlet {
     static final String JSP_INPUT = "/WEB-INF/jsp/input.jsp";
     static final String JSP_SETTINGS = "/WEB-INF/jsp/settings.jsp";
     static final String JSP_OUTPUT = "/WEB-INF/jsp/output.jsp";
+    static final String JSP_PREVIEW = "/WEB-INF/jsp/preview.jsp";
 
     private Main main = new Main();
+
+    private void preview(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        // reads input file from an absolute path
+        String fileName = request.getParameter("name");
+        String filePath = fileName;
+
+        //send parameter "xml" to jsp
+        request.setAttribute("xml", main.viewXML(filePath));
+        try {
+            request.setAttribute("corpusFiles", main.getCorpusFiles());
+        } catch (Exception ex) {
+            Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        request.getRequestDispatcher(JSP_PREVIEW).forward(request, response);
+    }
 
     private void output(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setAttribute("info", main.getOutputInfo());
@@ -217,6 +238,8 @@ public class ActionServlet extends HttpServlet {
             settings(request, response);
         } else if (request.getServletPath().equals(ACTION_GETFILE)) {
             getFile(request, response);
+        } else if (request.getServletPath().equals(ACTION_PREVIEW)) {
+            preview(request, response);
         } else {
             throw new RuntimeException("Unknown operation: " + request.getServletPath());
         }

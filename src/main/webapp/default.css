@@ -1,12 +1,13 @@
 *{
     margin: auto;
-
-
 }
 
 
 root {
     display: block;   
+}
+.clear{
+    clear: both;
 }
 .telo{
     background-color:white;
@@ -21,9 +22,7 @@ root {
 
 body {
     font-family: georgia, Arial, Tahoma, Verdana;
-
     background-color:#F2F2F2;
-
 }
 
 
@@ -183,7 +182,7 @@ table{
     border-collapse: collapse;
 }
 table tr td{
-  
+
     padding-right: 7px;
 }
 table tr td input[type=text]{
@@ -195,3 +194,40 @@ table tr td input[type=checkbox]{
 #tabs{
     width:710px;
 }
+
+/* style for preview */
+.preview{ height: auto;
+          clear: both;
+          width: 100%;
+          display: block;
+          background-color:#c6f1ef;
+}
+.left_column{
+    float:left;
+    width:37%;     
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+    background-color:#a1cff2;
+    border-radius:5px;
+    padding:10px;
+    border:0px solid #F5DA81;
+}
+.right_column{   
+    float:right;
+    width:56%;
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+    background-color:#a1cff2;
+    border-radius:5px;
+    padding:10px;
+    border:0px solid #F5DA81;
+    margin-bottom: 10px;
+}
+
+.targetDiv{
+    padding-left: 10px;
+}
+
+
