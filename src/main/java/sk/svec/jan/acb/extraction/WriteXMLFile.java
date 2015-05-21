@@ -84,10 +84,6 @@ public class WriteXMLFile {
 
     }
 
-    public void xmlData() {
-
-    }
-
     public void addToXmlFile(String link, String title, String date, String text, String path) throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setValidating(false);
@@ -136,5 +132,4 @@ public class WriteXMLFile {
         System.out.println("File updated!");
     }
 
-   
 }

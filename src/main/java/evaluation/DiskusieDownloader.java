@@ -13,11 +13,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package sk.svec.jan.acb.utility;
+package evaluation;
 
 import java.util.ArrayList;
 import java.util.List;
 import sk.svec.jan.acb.main.Main;
+import sk.svec.jan.acb.utility.Setting;
 
 /**
  *

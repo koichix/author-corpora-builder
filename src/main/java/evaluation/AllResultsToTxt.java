@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package sk.svec.jan.acb.utility;
+package sk.svec.jan.acb.evaluation;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,6 +24,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import sk.svec.jan.acb.utility.TravelDirectory;
 
 /**
  *

@@ -30,7 +30,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import sk.svec.jan.acb.main.Main;
 import sk.svec.jan.acb.utility.Setting;
-import sk.svec.jan.acb.utility.ViewXML;
 
 /**
  *

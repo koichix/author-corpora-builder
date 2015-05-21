@@ -1,0 +1,106 @@
+java -jar wsd.jar -s http://zahranicni.ihned.cz/c3-63326830-090000_d-63326830-obama-vyhlasil-sankce-proti-severni-koreji-jsou-odvetou-za-hackersky-utok -c http://zahranicni.ihned.cz/
+java -jar wsd.jar -s http://www.novinky.cz/domaci/357621-silnice-jsou-s-opatrnosti-sjizdne-a-bez-nehod.html -c http://www.novinky.cz/domaci/
+java -jar wsd.jar -s http://zpravy.aktualne.cz/domaci/nahe-fotky-vydirani-kybersikana-se-rozmaha-i-v-cesku/r~63bee80485fd11e4bdad0025900fea04/ -c http://zpravy.aktualne.cz/domaci/
+java -jar wsd.jar -s http://www.svetandroida.cz/vanoce-hry-aplikace-201412 -c http://www.svetandroida.cz/     
+java -jar wsd.jar -s http://www.cas.sk/clanok/303038/exfarmar-tibor-zhana-zamestnanie-nema-problem-vypytat-si-poriadny-plat-tu-je-jeho-inzerat.html -c http://www.cas.sk/clanok/
+java -jar wsd.jar -s http://tn.nova.cz/clanek/v-cesku-jsou-stale-desetitisice-pozemku-i-domu-bez-majitele.html -c http://tn.nova.cz/clanek/  
+java -jar wsd.jar -s http://www.lidovky.cz/zpravy-dne-podle-editora-odskodne-pro-tri-exposlance-i-nezne-rvacky-v-ceskem-ragby-gjb-/zpravy-domov.aspx?c=A150327_214204_ln_domov_mpr -c http://www.lidovky.cz/
+java -jar wsd.jar -s http://www.blesk.cz/clanek/zpravy-udalosti/310465/majitel-applu-da-svuj-majetek-na-charitu-je-to-temer-20-miliard-korun.html -c http://www.blesk.cz/clanek/zpravy
+java -jar wsd.jar -s http://www.ceskenoviny.cz/zpravy/lufthansa-zaplati-rodinam-obeti-kompenzace/1198104 -c http://www.ceskenoviny.cz/zpravy/
+java -jar wsd.jar -s http://www.specnaz.cz/boj-nozem/bodla-zakerne-chladne-zbrane/ -c http://www.specnaz.cz/
+java -jar wsd.jar -s http://mladypodnikatel.cz/tomas-svoboda-pokud-chcete-dosahnout-aktivity-svych-ctenaru-a-divaku-musite-byt-aktivni-predevsim-sami-t11501 -c http://mladypodnikatel.cz/
+java -jar wsd.jar -s http://zahranicni.eurozpravy.cz/eu/116596-islamsky-stat-pripravuje-utok-na-italii-je-to-pry-otazka-tydnu/ -c http://zahranicni.eurozpravy.cz/
+java -jar wsd.jar -s http://bonusweb.idnes.cz/broken-sword-5-recenze-0ur-/Recenze.aspx?c=A140514_090710_bw-pc-recenze_srp -c http://bonusweb.idnes.cz/  
+java -jar wsd.jar -s http://vasevec.parlamentnilisty.cz/blogy/snem-babisova-hnuti-v-mnohem-pripomnel-nekdejsi-sjezdy-komunistu -c http://vasevec.parlamentnilisty.cz/blogy/
+java -jar wsd.jar -s http://zpravy.idnes.cz/situace-na-silnicich-ledovka-dgr-/domaci.aspx?c=A150102_073424_domaci_jj -c http://zpravy.idnes.cz/
+java -jar wsd.jar -s http://www.novinky.cz/domaci/357621-silnice-jsou-s-opatrnosti-sjizdne-a-bez-nehod.html -c http://www.novinky.cz/domaci/
+java -jar wsd.jar -s http://www.aktuality.sk/clanok/273052/nedelne-rano-bude-tazke-skrati-nam-sny-o-hodinu/ -c http://www.aktuality.sk/clanok/
+java -jar wsd.jar -s http://mojdom.zoznam.sk/cl/10065/1445929/10-domacich-kniznic--ake-ste-este-nevideli -c http://mojdom.zoznam.sk/cl/
+java -jar wsd.jar -s http://auto.idnes.cz/couvani-s-vozikem-0ma-/automoto.aspx?c=A141217_105706_automoto_fdv -c http://auto.idnes.cz/
+java -jar wsd.jar -s http://www.extra.cz/dr-dre-se-stane-nejbohatsim-rapperem-na-svete-apple-kupuje-jeho-firmu-na-sluchatka-za-3-2-miliardy-dolaru -c http://www.extra.cz
+java -jar wsd.jar -s http://www.pluska.sk/spravy/zo-zahranicia/desive-spravy-zivote-pilota-preco-ho-po-tomto-pustili-do-lietadla.html -c http://www.pluska.sk/spravy/
+java -jar wsd.jar -s http://hn.hnonline.sk/slovensko-119/shmu-varuje-pred-silnym-vetrom-pozrite-sa-kde-vyhlasili-vystrahu-704871 -c http://hn.hnonline.sk/  
+java -jar wsd.jar -s http://magazin.atlas.sk/spektrum/fakty-x-duch-v-bielom-dome/847507.html -c http://magazin.atlas.sk/
+java -jar wsd.jar -s http://www.root.cz/clanky/co-je-noveho-u-raspberry-pi-vsechno/ -c http://www.root.cz/clanky/
+java -jar wsd.jar -s http://www.vice.com/cs/read/prvni-trailer-na-novej-dokument-o-kurtovi-cobainovi -c http://www.vice.com/cs/
+java -jar wsd.jar -s http://vtm.e15.cz/karacaj-je-jezero-smrti-nejspinavejsi-misto-na-svete -c http://vtm.e15.cz/
+java -jar wsd.jar -s http://kovanda.blog.tyden.cz/clanky/6496/nastava-revoluce-digitalnich-men-george-selgin.html -c http://kovanda.blog.tyden.cz/clanky/
+java -jar wsd.jar -s http://pctuning.tyden.cz/navody/upravy-modding/32079-stroje-selective-fire-vykonne-elegantni-a-pekelne-drahe -c http://pctuning.tyden.cz/
+java -jar wsd.jar -s http://www.tyden.cz/rubriky/domaci/hejtman-v-brdech-by-mela-zustat-nedotcena-priroda_337677.html#.VRYTYvnF_To -c http://www.tyden.cz/
+
+tychto nemohlo stiahnut 500, iba menej:  
+java -jar wsd.jar -s http://www.modnipeklo.cz/clanky/oblekovy-prusvih/ -c http://www.modnipeklo.cz/clanky/
+java -jar wsd.jar -s http://games.tiscali.cz/recenze/pillars-of-eternity-recenze-249301 -c http://games.tiscali.cz/
+java -jar wsd.jar -s http://nedd.tiscali.cz/s-hladinkou-neodjedete-studie-vola-po-plosnem-zavedeni-detektoru-alkoholu-do-aut-249299 -c http://nedd.tiscali.cz/
+java -jar wsd.jar -s http://blog.aktualne.cz/blogy/radkin-honzak.php?itemid=24971 -c http://blog.aktualne.cz/blogy/
+
+anglicke:
+java -jar wsd.jar -s http://www.dailymail.co.uk/news/article-2894480/Prince-Andrew-repeatedly-slept-sex-slave-controlled-underage-prostitution-ring-U-S-court-papers-claim.html -c http://www.dailymail.co.uk/news/article
+java -jar wsd.jar -s http://www.reuters.com/article/2015/01/02/us-indonesia-airplane-idUSKBN0K900D20150102 -c http://www.reuters.com/article/
+java -jar wsd.jar -s http://www.independent.co.uk/news/world/asia/no-google-this-is-not-a-photo-of-kim-jonguns-sister-9954590.html -c http://www.independent.co.uk/news/
+java -jar wsd.jar -s http://www.nytimes.com/2014/12/22/nyregion/a-widening-rift-between-de-blasio-and-the-police-is-savagely-ripped-open.html -c http://www.nytimes.com/
+java -jar wsd.jar -s http://kotaku.com/13-things-you-might-not-know-about-the-last-of-us-1674102405 -c http://kotaku.com/
+java -jar wsd.jar -s http://news.discovery.com/tech/apps/holiday-apps-lower-stress-pile-on-smiles-141217.htm -c http://news.discovery.com/tech/
+
+zatial nefunkcne (nespravna analyza):
+java -jar wsd.jar -s http://www.webnoviny.sk/slovensko/clanok/904476-kvalita-demokracie-na-slovensku-klesla-prikladov-je-viac/ -c http://www.webnoviny.sk/slovensko/clanok/
+java -jar wsd.jar -s http://www.tvnoviny.sk/domace/1782038_pozor-na-odvody-od-noveho-roka-zaplatime-viac -c http://www.tvnoviny.sk/domace/
+java -jar wsd.jar -s http://navolnenoze.cz/blog/delej-bojuj/ -c http://navolnenoze.cz/blog/
+java -jar wsd.jar -s http://osel.cz/index.php?clanek=8144 -c http://osel.cz/
+java -jar wsd.jar -s http://paragraphos.pecina.cz/2015/03/byla-to-lez-cilena.html -c http://paragraphos.pecina.cz 
+java -jar wsd.jar -s http://www.vlastnihlavou.cz/americti-politici-pozaduji-odtajneni-cenzurovane-zpravy-o-911/ -c http://www.vlastnihlavou.cz/
+java -jar wsd.jar -s http://varecha.pravda.sk/recepty/steak-z-lahkym-salatom/55881-recept.html -c http://varecha.pravda.sk/recepty/
+java -jar wsd.jar -s http://refresher.sk/25182-Z-ulice-na-podium-z-klubov-na-festivaly-2-Ed-Sheeran-Mumford-Sons -c http://refresher.sk/
+java -jar wsd.jar -s http://www.topky.sk/cl/100313/1447073/Lekarka-zo-slovenskeho-soubiznisu--Tragedia-na-Stedry-den--obet-bojuje-o-zivot- -c http://www.topky.sk/cl/
+java -jar wsd.jar -s http://www.blisty.cz/art/75837.html -c http://www.blisty.cz/art/
+                                         
+crawler nedokaze poriadne spracovat:
+java -jar wsd.jar -s http://cermanjaroslav.blog.respekt.ihned.cz/c1-61893560-pruvodce-internetem-stareho-muze -c http://cermanjaroslav.blog.respekt.ihned.cz/c
+java -jar wsd.jar -s http://tomanova.blog.denik.cz/c/449184/Skupinovka-7-cast.html -c http://tomanova.blog.denik.cz/c/
+java -jar wsd.jar -s http://vetvicka.blog.idnes.cz/c/436143/Nevolim-voly.html -c http://vetvicka.blog.idnes.cz/c/
+java -jar wsd.jar -s http://lnenicka.bigbloger.lidovky.cz/c/449048/Chvala-lenosti.html -c http://lnenicka.bigbloger.lidovky.cz/c/
+java -jar wsd.jar -s http://adler.blog.ihned.cz/c1-52137380-loterie-zvana-draft -c http://adler.blog.ihned.cz/
+java -jar wsd.jar -s http://sport.sme.sk/c/7559688/slovan-ziskal-trojku-draftu-nhl-2004-obrancu-barkera.html -c http://sport.sme.sk/c/   
+ 
+diskusie:
+http://cs.jaguar-club.net/forum-tema/renovacia-e-type-7790
+
+linky od JR:
+http://blog.ihned.cz/seznam-blogeru/
+http://ihned.cz/
+http://blog.idnes.cz/,http://blog.idnes.cz/blogeri.asp
+http://zpravy.idnes.cz/diskuse.aspx?idostrova=idnes&r=1,http://blog2.idnes.cz/diskuse.aspx
+http://blog.cz/zebricky/nejnovejsi-clanky,http://blog.cz/
+http://tn.nova.cz/zpravy/
+http://www.lidovky.cz/diskuse.asp
+http://www.novinky.cz/
+http://pauza.zive.cz/index.php,http://pauza.zive.cz/memberlist.php
+http://www.blesk.cz/
+http://www.tyden.cz/
+http://www.ceskenoviny.cz/
+http://diskuse.tiscali.cz/,http://zpravy.tiscali.cz/
+http://forum.lide.cz/,http://profil.lide.cz/
+http://www.specnaz.cz/forum/,http://www.specnaz.cz/forum/memberlist.php
+http://www.filosofie.cz/forum/
+http://blog.respekt.ihned.cz/vsechny-blogy/,http://blog.respekt.ihned.cz/seznam-blogeru/
+http://blog.respekt.ihned.cz/
+http://aktualne.centrum.cz/blogy-a-nazory/
+http://bigbloger.lidovky.cz/
+http://blog.denik.cz/,http://blog.denik.cz/blogeri.asp
+http://www.denik.cz/
+http://forum.valka.cz/index.php/f/500002
+http://www.kscm.cz/on-line-rozhovor-diskuse/diskuse
+http://www.rostworld.cz/
+http://forum.vojsko.net/
+http://narmyslenka.cz/
+http://www.vlastnihlavou.cz/
+http://blog.tyden.cz/vse/
+http://paragraphos.pecina.cz/
+http://www.diskutnici.cz/
+http://eurozpravy.cz/diskuse
+http://www.vasevec.cz/blogy
+      
+any new sites ?? :)
+http://aeronet.cz/news/vyzva-k-zachrane-aeronetu-darci-sponzori-ctenari-pratele-svobody-slova-pomozte/ http://aeronet.cz/news/
+http://shirai.cz/clanek-zobraz/257/animefest-2015/ http://shirai.cz/clanek-zobraz/
+http://www.denik.cz/z_domova/lyzarska-sezona-konci-arealy-se-zaviraji-na-hory-prijelo-minimum-lidi-20150329.html http://www.denik.cz/z_domova/

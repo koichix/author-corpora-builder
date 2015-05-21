@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package sk.svec.jan.acb.utility;
+package sk.svec.jan.acb.web;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,6 +28,25 @@ import org.w3c.dom.NodeList;
  * @author Ján Švec
  */
 public class ViewXML {
+
+    public String getText(String path) throws Exception {
+
+        File xmlFile = new File(path);
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setValidating(false);
+        DocumentBuilder db = dbf.newDocumentBuilder();
+
+        Document doc = db.parse(new FileInputStream(xmlFile));
+
+        Element rootElement = doc.getDocumentElement();
+
+        NodeList allArticles = rootElement.getElementsByTagName("Article");
+        NodeList childNodes = allArticles.item(0).getChildNodes();
+        String text = childNodes.item(3).getTextContent();
+
+        return text;
+
+    }
 
     public String getXMLcontent(String path) throws Exception {
         StringBuilder xml = new StringBuilder();
@@ -47,7 +66,7 @@ public class ViewXML {
         NodeList elementsByTagName = rootElement.getElementsByTagName("Name");
 
         String autor = elementsByTagName.item(0).getTextContent();
-        xml.append("Autor: " + autor );
+        xml.append("Autor: " + autor);
 
         NodeList allArticles = rootElement.getElementsByTagName("Article");
         int articlesCount = allArticles.getLength();
@@ -58,7 +77,7 @@ public class ViewXML {
             nadpis = childNodes.item(1).getTextContent();
             datum = childNodes.item(2).getTextContent();
             text = childNodes.item(3).getTextContent();
-            xml.append("<br/><br/>Článok číslo:"+(i+1)+"<br/>");
+            xml.append("<br/><br/>Článok číslo:" + (i + 1) + "<br/>");
             xml.append("Link: <a href=\"" + link + "\" target=\"_blank\">" + link + "</a><br/>"
                     + "Nadpis: " + nadpis + "<br/>"
                     + "Dátum: " + datum + "<br/>"
@@ -76,9 +95,9 @@ public class ViewXML {
 
     }
 
-    public static void main(String[] args) throws Exception {
-        ViewXML test = new ViewXML();
-        System.out.println(test.getXMLcontent("corpus/a.xml"));
-
-    }
+//    public static void main(String[] args) throws Exception {
+//        ViewXML test = new ViewXML();
+//        System.out.println(test.getXMLcontent("corpus/a.xml"));
+//
+//    }
 }

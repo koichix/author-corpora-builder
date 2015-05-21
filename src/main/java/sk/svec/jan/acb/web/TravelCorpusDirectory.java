@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package sk.svec.jan.acb.utility;
+package sk.svec.jan.acb.web;
 
 import java.io.File;
 import java.util.ArrayList;

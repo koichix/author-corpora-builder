@@ -44,9 +44,9 @@ import sk.svec.jan.acb.utility.CleanDirectory;
 import sk.svec.jan.acb.utility.ConfigCreator;
 import sk.svec.jan.acb.utility.CreateZip;
 import sk.svec.jan.acb.utility.Setting;
-import sk.svec.jan.acb.utility.TravelCorpusDirectory;
+import sk.svec.jan.acb.web.TravelCorpusDirectory;
 import sk.svec.jan.acb.utility.TravelDirectory;
-import sk.svec.jan.acb.utility.ViewXML;
+import sk.svec.jan.acb.web.ViewXML;
 
 /**
  *

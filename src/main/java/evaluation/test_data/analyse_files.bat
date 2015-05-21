@@ -1,0 +1,1 @@
+java -jar wsd.jar -a

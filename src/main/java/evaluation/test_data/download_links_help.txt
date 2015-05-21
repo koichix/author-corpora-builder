@@ -1,0 +1,7 @@
+cmd
+java -jar wsd.jar -s link-na-zaciatok -c link-na-filter
+
+-u, -m 100 pri prvom spusteni, su to nastavenia custom url on/off a max pages number
+
+priklad:
+java -jar wsd.jar -s http://www.cas.sk/clanok/311910/ako-bude-vyzerat-princ-george-v-18-rokoch-naslednik-tronu-bude-poriadny-fesak.html -c http://www.cas.sk/clanok/
