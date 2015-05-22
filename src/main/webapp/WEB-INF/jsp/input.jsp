@@ -33,7 +33,7 @@
                 <td><input type="Submit" value="Analyzuj" id="analyze" title="Analyzuje stiahnuté dáta." name="analyze"/></td>
                 --> 
                 
-                <td><input type="Submit" value="Spusti" id="run" title="Stiahne a analyzuje stránky zo zvolenej domény." name="run"/></td>
+                <td><input type="Submit" value="" id="run" title="Stiahne a analyzuje stránky zo zvolenej domény." name="run" class="run_icon"/></td>
             </tr>
 
         </table> 

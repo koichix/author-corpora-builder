@@ -109,6 +109,22 @@ a:visited {
     height:35px;
     width:35px;
 }
+.run_icon{  
+    float: left;
+    background-image:url(/run2.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height:35px;
+    width:35px;
+    background-color: transparent;
+    border: none;
+}
+/*.run_icon:hover{  
+   background-image:url(/run2.png); 
+}*/
+.run_icon:active{  
+   background-image:url(/run.png); 
+}
 
 .language_icon{
     float: right;
@@ -208,7 +224,7 @@ td {
 }
 
 .link{
-    width: 600px !important;
+    width: 635px !important;
     border-radius:30px; 
     padding-left: 3px;
     padding-right: 3px;      

@@ -71,7 +71,7 @@
 
 </div> <br>
 <p align="center">
-    <input type="Submit" value="Uložiť" name="submit"/>    
+    <input type="Submit" value="Uložiť" name="submit" class="jq"/>    
 </p>
 </form>
 <br/>
