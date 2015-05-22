@@ -50,6 +50,10 @@
                     $("#loading").dialog("open");
                 });
 
+                $("#run").click(function () {
+                    $("#loading").dialog("open");
+                });
+
             });
 
             $(function () {
@@ -82,7 +86,7 @@
                     $("#autoUpdate").hide();  // checked
                 else
                     $("#autoUpdate").show();  // unchecked
-                
+
                 jQuery('.targetDiv').hide(); //hide all divs on load
 
             });
@@ -92,7 +96,7 @@
                 jQuery('#showall').click(function () {
                     jQuery('.targetDiv').show();
                 });
-                 jQuery('#hideall').click(function () {
+                jQuery('#hideall').click(function () {
                     jQuery('.targetDiv').hide();
                 });
                 jQuery('.showSingle').click(function () {
@@ -112,11 +116,32 @@
     </head>
 
     <body>     
-        <div class="telo">
+        <div class="wrapper">
+            <h1><a href="<c:url value="/input"/>">Authorship corpora builder</a></h1>           
+
             <!--language switcher -->
             <form>
-                <select id="language" name="language" onchange="submit()">
+                <select id="language" name="language" class="language_icon" onchange="submit()">
                     <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
                     <option value="sk" ${language == 'sk' ? 'selected' : ''}>Slovak</option>
                 </select>
-            </form>
+            </form>  
+            <a href="<c:url value="/help"/>" class="help_icon" title="Help"></a>
+            <a href="<c:url value="/settings"/>" class="settings_icon" title="Nastavenia"></a>          
+            <br/> 
+
+            <div class="popis">
+                <h2>Aplikácia na automatické extrahovanie informácií z internetových článkov</h2>
+                <p>
+                    Aplikácia slúži na automatickú detekciu obsahu internetových článkov. Po zadaní url postupne prejde určený počet článkov (možnosť nastaviť v nastaveniach), a extrahuje z nich nadpis, autora, dátum a text článku. Výstupom je ZIP súbor, v ktorom sú XML súbory vytvorené na základe mena autora a k nemu priradené jeho články.                   
+
+                    <br/><br/>
+                    Aplikáciu si môžete stiahnuť na: <a href="https://github.com/koichix/author-corpora-builder">GIThube.</a>  
+                    <br/>
+                    Vybudovaný autorský korpus si môžete stiahnuť: <a href="/getfile?name=corpus\author_corpus.zip">author_corpus.zip</a> alebo zobraziť <a href="<c:url value="/preview"/>" class="jq" >Preview</a><br/>
+                </p>
+
+            </div>
+
+
+            <div class="main_content clear">

@@ -1,9 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../html/header.html"%>  
-<h1><a href="<c:url value="/input"/>">Authorship corpora builder</a></h1>           
-<h2>Aplikácia na automatické extrahovanie informácií z internetových článkov</h2>
-<a href="<c:url value="/settings"/>" class="nastavenia" title="Nastavenia"></a>
-<br/>            
+<h3>Live demo</h3><br/>
 <c:if test="${not empty error}">
     <div class="ui-widget" >
         <div class="ui-state-highlight ui-corner-all" style="margin-top: 10px; padding:0.7em; margin-bottom: 5px">
@@ -29,8 +26,14 @@
 
         <table>
             <tr>                  
-                <td><input type="text" name="link1" class="link"  title="Miesto pre vloženie url adresy." value="${inputForm.link1}" style="width:490px !important;"/></td>
-                <!-- <td><label><input type="checkbox" name="disc" title="Zaškrtnúť, v prípade že chceme analyzovať diskusie."  value="true"/>diskusia</label></td>--> <td><input type="Submit" value="Stiahni" title="Stiahne určený počet webstránok z danej domény." name="submit" id="submit"/></td> <td><input type="Submit" value="Analyzuj" id="analyze" title="Analyzuje stiahnuté dáta." name="analyze"/></td>
+                <td><input type="text" name="link1" class="link"  title="Miesto pre vloženie url adresy." value="${inputForm.link1}"/></td>
+                <!-- <td><label><input type="checkbox" name="disc" title="Zaškrtnúť, v prípade že chceme analyzovať diskusie."  value="true"/>diskusia</label></td>
+              
+                <td><input type="Submit" value="Stiahni" title="Stiahne určený počet webstránok z danej domény." name="submit" id="submit"/></td>
+                <td><input type="Submit" value="Analyzuj" id="analyze" title="Analyzuje stiahnuté dáta." name="analyze"/></td>
+                --> 
+                
+                <td><input type="Submit" value="Spusti" id="run" title="Stiahne a analyzuje stránky zo zvolenej domény." name="run"/></td>
             </tr>
 
         </table> 
@@ -39,35 +42,24 @@
     <br/>
     <h3>Vzorové URL adresy:</h3>
     <p class="vzor">
+        <a href="#" onclick="document.form.link1.value = 'http://mladypodnikatel.cz/tomas-svoboda-pokud-chcete-dosahnout-aktivity-svych-ctenaru-a-divaku-musite-byt-aktivni-predevsim-sami-t11501';
+                return false;">mladypodnikatel.cz</a>
+        <a href="#" onclick="document.form.link1.value = 'http://tn.nova.cz/clanek/v-cesku-jsou-stale-desetitisice-pozemku-i-domu-bez-majitele.html';
+                return false;">tn.nova.cz</a>
         <a href="#" onclick="document.form.link1.value = 'http://www.cas.sk/clanok/303038/exfarmar-tibor-zhana-zamestnanie-nema-problem-vypytat-si-poriadny-plat-tu-je-jeho-inzerat.html';
                 return false;">cas.sk</a>
         <a href="#" onclick="document.form.link1.value = 'http://www.novinky.cz/domaci/357474-majitelum-starsich-domu-hrozi-ze-zaplati-za-merice-i-miliony.html';
                 return false;">novinky.cz</a>
         <a href="#" onclick="document.form.link1.value = 'http://www.svetandroida.cz/vanoce-hry-aplikace-201412';
                 return false;">svetandroida.cz</a>
-        <a href="#" onclick="document.form.link1.value = 'http://uk.businessinsider.com/isis-is-much-stronger-and-much-more-dangerous-than-people-realize-2014-12';
-                return false;">businessinsider.com</a>
         <a href="#" onclick="document.form.link1.value = 'http://zpravy.aktualne.cz/domaci/nahe-fotky-vydirani-kybersikana-se-rozmaha-i-v-cesku/r~63bee80485fd11e4bdad0025900fea04/';
                 return false;">aktualne.cz</a>
+        <a href="#" onclick="document.form.link1.value = 'http://uk.businessinsider.com/isis-is-much-stronger-and-much-more-dangerous-than-people-realize-2014-12';
+                return false;">businessinsider.com</a>
 
-        <a href="<c:url value="/preview"/>" class="jq" style="float:right">Preview</a><br/><br/>
     </p>
 </div>
 <br/>
-<h3>Popis aplikácie</h3>
-<br/>
-<p class="popis">
-    Aplikácia slúži na automatickú detekciu obsahu internetových článkov. Po zadaní url postupne prejde určený počet článkov (možnosť nastaviť v nastaveniach), a extrahuje z nich nadpis, autora, dátum a text článku. Výstupom je ZIP súbor, v ktorom sú XML súbory vytvorené na základe mena autora a k nemu priradené jeho články.                   
-</p>
 <br/>
 
-
-<h3>Ako používať aplikáciu (popis jednotlivých funkcií):</h3> <br/>  
-<p class="popis">
-    <strong>Nastavenia</strong> - nastavenie počtu stiahnutých článkov, doby čakania medzi stiahnutím viacerých článkov a iných parametrov. <br/>
-    <strong>Stiahni</strong> - aplikácia stiahne určený počet stránok, ktoré sú súčasťou obsahu zadanej webstránky a jej podstránok. V prípade potreby stiahnutia len článkov typu "diskusia/fórum/komentáre..", zaškrtneme políčko diskusia. <br/>
-    <strong>Analyzuj</strong> - aplikácia analyzuje dáta, ktoré sme v predchádzajúcom kroku stiahli a následne vypíše výstup v podobe odkazov na konkrétne stránky/podstránky + extrahované dáta z nich, ktoré je možné stiahnuť. Všetky tieto dáta budú uložené v tabuľke.
-</p> 
-<br/>
-<br/>
 <%@include file="../html/footer.html"%>     

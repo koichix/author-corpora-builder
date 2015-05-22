@@ -205,13 +205,16 @@ public class Main {
     }
 
     public void start(boolean disc) throws Exception {
-        //clean directory output
-//        CleanDirectory cd = new CleanDirectory(path);
-//        cd.run();
-
         //crawler        
         Crawler crawler = new Crawler(seeds, disc);
         crawler.startCrawling();
+
+        if (disc) {
+            diskusia = true;
+        } else {
+            diskusia = false;
+        }
+
         //travel all the directories
         TravelDirectory travelDirectory = new TravelDirectory(path);
         List<String> directories = travelDirectory.getDirectories();
@@ -231,13 +234,11 @@ public class Main {
                 System.out.println("All pages extracted succesfully!");
 
                 if (disc) {
-                    diskusia = true;
                     //discussion finder
                     new File(p + "results/").mkdirs();
                     DiscussionFinder discussionFinder = new DiscussionFinder(p);
                     System.out.println("All data saved succesfully!");
                 } else {
-                    diskusia = false;
                     //finder
                     new File(p + "results/").mkdirs();
                     Finder finder = new Finder(p);
@@ -247,7 +248,7 @@ public class Main {
             }
         }
 
-        //vytvori zip z priecinku autorov
+        //vytvori zip z priecinku autorov       
         CreateZip createZip = new CreateZip(path);
 
     }
@@ -356,304 +357,301 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        Main test = new Main();
-        System.out.println(test.getCorpusFiles());
+        JSAP jsap = new JSAP();
 
-//        JSAP jsap = new JSAP();
-//
-//        FlaggedOption opt1 = new FlaggedOption("stiahni")
-//                .setStringParser(JSAP.STRING_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('s')
-//                .setLongFlag("stiahni");
-//        opt1.setHelp("aplikácia stiahne určený počet stránok zo zadaného URL");
-//        jsap.registerParameter(opt1);
-//
-//        FlaggedOption opt2 = new FlaggedOption("spusti")
-//                .setStringParser(JSAP.STRING_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('x')
-//                .setLongFlag("spusti");
-//        opt2.setHelp("aplikácia stiahne určený počet stránok zo zadaného URL a analyzuje stiahnuté dáta");
-//        jsap.registerParameter(opt2);
-//
-//        Switch sw1 = new Switch("diskusia")
-//                .setShortFlag('d')
-//                .setLongFlag("diskusia");
-//        sw1.setHelp("nastavenie či sa jedná o diskusiu alebo článok");
-//        jsap.registerParameter(sw1);
-//
-//        Switch sw2 = new Switch("analyzuj")
-//                .setShortFlag('a')
-//                .setLongFlag("analyzuj");
-//        sw2.setHelp("aplikácia analyzuje stiahnuté dáta");
-//        jsap.registerParameter(sw2);
-//
-//        Switch sw3 = new Switch("vymaz")
-//                .setShortFlag('v')
-//                .setLongFlag("vymaz");
-//        sw3.setHelp("aplikácia vymaže všetky predchádzajúce stiahnuté dáta");
-//        jsap.registerParameter(sw3);
-//
-//        FlaggedOption opt3 = new FlaggedOption("maxpages")
-//                .setStringParser(JSAP.STRING_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('m')
-//                .setLongFlag("maxpages");
-//        opt3.setHelp("nastavenie počtu stiahnutých článkov");
-//        jsap.registerParameter(opt3);
-//
-//        FlaggedOption opt4 = new FlaggedOption("politeness")
-//                .setStringParser(JSAP.STRING_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('p')
-//                .setLongFlag("politeness");
-//        opt4.setHelp("nastavenie doby čakania medzi stiahnutím viacerých stránok v milisekundách");
-//        jsap.registerParameter(opt4);
-//
-//        FlaggedOption opt5 = new FlaggedOption("threshold")
-//                .setStringParser(JSAP.STRING_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('t')
-//                .setLongFlag("threshold");
-//        opt5.setHelp("nastavenie váhy prahovej hodnoty pre čistenie stránky od boilerplate pomocou SST");
-//        jsap.registerParameter(opt5);
-//
-//        FlaggedOption opt6 = new FlaggedOption("maxdepth")
-//                .setStringParser(JSAP.STRING_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('h')
-//                .setLongFlag("maxdepth");
-//        opt6.setHelp("celé číslo od 1 do N symbolizuje hĺbku zanorenia crawleru vrámci URL adresy");
-//        jsap.registerParameter(opt6);
-//
-//        FlaggedOption opt7 = new FlaggedOption("customurl")
-//                .setStringParser(JSAP.STRING_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('c')
-//                .setLongFlag("customurl");
-//        opt7.setHelp("nastavenie filtra URL adresy, pomocou ktorého bude filtrovať sťahované stránky");
-//        jsap.registerParameter(opt7);
-//
-//        FlaggedOption opt8 = new FlaggedOption("setcustomurl")
-//                .setStringParser(JSAP.BOOLEAN_PARSER)
-//                .setRequired(false)
-//                .setShortFlag('u')
-//                .setLongFlag("setcustomurl");
-//        opt8.setHelp("vypne alebo zapne použitie custom url [t/f]");
-//        jsap.registerParameter(opt8);
-//
-//        Switch sw4 = new Switch("napoveda")
-//                .setShortFlag('n')
-//                .setLongFlag("napoveda");
-//        sw4.setHelp("zobrazí nápovedu");
-//        jsap.registerParameter(sw4);
-//
-//        JSAPResult config = jsap.parse(args);
-//
-//        if (!config.success()) {
-//            System.err.println();
-//            for (java.util.Iterator errs = config.getErrorMessageIterator();
-//                    errs.hasNext();) {
-//                System.err.println("Chyba: " + errs.next());
-//            }
-//            System.err.println("Použitie: java " + Main.class.getName());
-//            System.err.println(jsap.getUsage());
-//            System.err.println();
-//            System.err.println(jsap.getHelp());
-//            System.exit(1);
-//        }
-//
-//        if (config.getBoolean("napoveda")) {
-//            System.out.println(jsap.getUsage());
-//            System.out.println();
-//            System.out.println(jsap.getHelp());
-//        }
-//
-//        Main wdm = new Main();
-//        if (config.getBoolean("vymaz")) {
-//            System.out.println("mazem priecinok");
-//            wdm.clean();
-//        }
-//
-//        String maxpages = config.getString("maxpages");
-//        if (maxpages != null) {
-//            if (maxpages.compareTo("null") != 0) {
-//                System.out.println("nastavujem maxpages na " + maxpages);
-//
-//                Setting setting = new Setting();
-//                setting.setSetting1(maxpages); //"MaxPagesToFetch"
-//                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
-//                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
-//                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
-//                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
-//                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
-//                wdm.setSettings(setting);
-//            }
-//        }
-//        String politeness = config.getString("politeness");
-//        if (politeness != null) {
-//            if (politeness.compareTo("null") != 0) {
-//                System.out.println("nastavujem politeness na " + politeness);
-//                Setting setting = new Setting();
-//                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
-//                setting.setSetting2(politeness); //"PolitenessDelay"
-//                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
-//                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
-//                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
-//                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
-//                wdm.setSettings(setting);
-//            }
-//        }
-//        String threshold = config.getString("threshold");
-//        if (threshold != null) {
-//            if (threshold.compareTo("null") != 0) {
-//                System.out.println("nastavujem threshold na " + threshold);
-//
-//                Setting setting = new Setting();
-//                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
-//                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
-//                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
-//                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
-//                setting.setSetting5(threshold); //"Threshold"
-//                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
-//                wdm.setSettings(setting);
-//            }
-//        }
-//        String maxdepth = config.getString("maxdepth");
-//        if (maxdepth != null) {
-//            if (maxdepth.compareTo("null") != 0) {
-//                System.out.println("nastavujem maxdepth na " + maxdepth);
-//
-//                Setting setting = new Setting();
-//                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
-//                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
-//                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
-//                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
-//                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
-//                setting.setSetting6(maxdepth); //"MaxDepth" 
-//                wdm.setSettings(setting);
-//            }
-//        }
-//        String customurl = config.getString("customurl");
-//        if (customurl != null) {
-//            if (customurl.compareTo("null") != 0) {
-//                if (!customurl.startsWith("http://")) {
-//                    customurl = "http://" + customurl;
-//                }
-//                if (validateUrl(customurl)) {
-//
-//                    System.out.println("nastavujem customurl na " + customurl);
-//                    System.out.println("zapinam customurl na true");
-//
-//                    Setting setting = new Setting();
-//                    setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
-//                    setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
-//                    setting.setSetting3(customurl); //"CustomUrl"
-//                    setting.setSetting4("true"); //"CustomUrlSet"
-//                    setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
-//                    setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
-//                    wdm.setSettings(setting);
-//                } else {
-//                    System.err.println("Url " + customurl + " je neplatné. Zadajte prosím platné url.");
-//                }
-//            }
-//        }
-//        if (config.contains("setcustomurl")) {
-//            boolean setcustomurl = config.getBoolean("setcustomurl");
-//            if (setcustomurl) {
-//                System.out.println("nastavujem pouzitie custom url na true");
-//
-//                Setting setting = new Setting();
-//                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
-//                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
-//                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
-//                setting.setSetting4("true"); //"CustomUrlSet"
-//                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
-//                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
-//                wdm.setSettings(setting);
-//            } else {
-//                System.out.println("nastavujem pouzitie custom url na false");
-//
-//                Setting setting = new Setting();
-//                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
-//                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
-//                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
-//                setting.setSetting4("false"); //"CustomUrlSet"
-//                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
-//                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
-//                wdm.setSettings(setting);
-//            }
-//        }
-//
-//        String url2 = config.getString("spusti");
-//        if (url2 != null) {
-//            if (url2.compareTo("null") != 0) {
-//                if (!url2.startsWith("http://")) {
-//                    url2 = "http://" + url2;
-//                }
-//                if (validateUrl(url2)) {
-//                    System.out.println("stahujem aj analyzujem url " + validateUrl(url2));
-//                    if (config.getBoolean("diskusia")) {
-//                        System.out.println("je to diskusia");
-//                        List<String> link = new ArrayList();
-//                        link.add(url2);
-//                        wdm.setSeeds(link);
-//                        wdm.start(true);
-//
-//                    } else {
-//                        System.out.println("nieje to diskusia");
-//                        List<String> link = new ArrayList();
-//                        link.add(url2);
-//                        wdm.setSeeds(link);
-//                        wdm.start(false);
-//                    }
-//                } else {
-//                    System.err.println("Url " + url2 + " je neplatné. Zadajte prosím platné url.");
-//                }
-//            }
-//        }
-//
-//        String url = config.getString("stiahni");
-//        if (url != null) {
-//            if (url.compareTo("null") != 0) {
-//                if (!url.startsWith("http://")) {
-//                    url = "http://" + url;
-//                }
-//                if (validateUrl(url)) {
-//                    System.out.println("stahujem z url " + validateUrl(url));
-//                    if (config.getBoolean("diskusia")) {
-//                        System.out.println("je to diskusia");
-//                        System.out.println("je to diskusia");
-//                        List<String> link = new ArrayList();
-//                        link.add(url);
-//                        wdm.setSeeds(link);
-//                        wdm.crawlWithoutClean(true);
-//
-//                    } else {
-//                        System.out.println("nieje to diskusia");
-//                        List<String> link = new ArrayList();
-//                        link.add(url);
-//                        wdm.setSeeds(link);
-//                        wdm.crawlWithoutClean(false);
-//                    }
-//                } else {
-//                    System.err.println("Url " + url + " je neplatné. Zadajte prosím platné url.");
-//                }
-//            }
-//        }
-//
-//        if (config.getBoolean("analyzuj")) {
-//            System.out.println("analyzujem");
-//            if (config.getBoolean("diskusia")) {
-//                System.out.println("je to diskusia");
-//                wdm.analyze(true);
-//            } else {
-//                System.out.println("nieje to diskusia");
-//                wdm.analyze(false);
-//            }
-//
-//        }
+        FlaggedOption opt1 = new FlaggedOption("stiahni")
+                .setStringParser(JSAP.STRING_PARSER)
+                .setRequired(false)
+                .setShortFlag('s')
+                .setLongFlag("stiahni");
+        opt1.setHelp("aplikácia stiahne určený počet stránok zo zadaného URL");
+        jsap.registerParameter(opt1);
+
+        FlaggedOption opt2 = new FlaggedOption("spusti")
+                .setStringParser(JSAP.STRING_PARSER)
+                .setRequired(false)
+                .setShortFlag('x')
+                .setLongFlag("spusti");
+        opt2.setHelp("aplikácia stiahne určený počet stránok zo zadaného URL a analyzuje stiahnuté dáta");
+        jsap.registerParameter(opt2);
+
+        Switch sw1 = new Switch("diskusia")
+                .setShortFlag('d')
+                .setLongFlag("diskusia");
+        sw1.setHelp("nastavenie či sa jedná o diskusiu alebo článok");
+        jsap.registerParameter(sw1);
+
+        Switch sw2 = new Switch("analyzuj")
+                .setShortFlag('a')
+                .setLongFlag("analyzuj");
+        sw2.setHelp("aplikácia analyzuje stiahnuté dáta");
+        jsap.registerParameter(sw2);
+
+        Switch sw3 = new Switch("vymaz")
+                .setShortFlag('v')
+                .setLongFlag("vymaz");
+        sw3.setHelp("aplikácia vymaže všetky predchádzajúce stiahnuté dáta");
+        jsap.registerParameter(sw3);
+
+        FlaggedOption opt3 = new FlaggedOption("maxpages")
+                .setStringParser(JSAP.STRING_PARSER)
+                .setRequired(false)
+                .setShortFlag('m')
+                .setLongFlag("maxpages");
+        opt3.setHelp("nastavenie počtu stiahnutých článkov");
+        jsap.registerParameter(opt3);
+
+        FlaggedOption opt4 = new FlaggedOption("politeness")
+                .setStringParser(JSAP.STRING_PARSER)
+                .setRequired(false)
+                .setShortFlag('p')
+                .setLongFlag("politeness");
+        opt4.setHelp("nastavenie doby čakania medzi stiahnutím viacerých stránok v milisekundách");
+        jsap.registerParameter(opt4);
+
+        FlaggedOption opt5 = new FlaggedOption("threshold")
+                .setStringParser(JSAP.STRING_PARSER)
+                .setRequired(false)
+                .setShortFlag('t')
+                .setLongFlag("threshold");
+        opt5.setHelp("nastavenie váhy prahovej hodnoty pre čistenie stránky od boilerplate pomocou SST");
+        jsap.registerParameter(opt5);
+
+        FlaggedOption opt6 = new FlaggedOption("maxdepth")
+                .setStringParser(JSAP.STRING_PARSER)
+                .setRequired(false)
+                .setShortFlag('h')
+                .setLongFlag("maxdepth");
+        opt6.setHelp("celé číslo od 1 do N symbolizuje hĺbku zanorenia crawleru vrámci URL adresy");
+        jsap.registerParameter(opt6);
+
+        FlaggedOption opt7 = new FlaggedOption("customurl")
+                .setStringParser(JSAP.STRING_PARSER)
+                .setRequired(false)
+                .setShortFlag('c')
+                .setLongFlag("customurl");
+        opt7.setHelp("nastavenie filtra URL adresy, pomocou ktorého bude filtrovať sťahované stránky");
+        jsap.registerParameter(opt7);
+
+        FlaggedOption opt8 = new FlaggedOption("setcustomurl")
+                .setStringParser(JSAP.BOOLEAN_PARSER)
+                .setRequired(false)
+                .setShortFlag('u')
+                .setLongFlag("setcustomurl");
+        opt8.setHelp("vypne alebo zapne použitie custom url [t/f]");
+        jsap.registerParameter(opt8);
+
+        Switch sw4 = new Switch("napoveda")
+                .setShortFlag('n')
+                .setLongFlag("napoveda");
+        sw4.setHelp("zobrazí nápovedu");
+        jsap.registerParameter(sw4);
+
+        JSAPResult config = jsap.parse(args);
+
+        if (!config.success()) {
+            System.err.println();
+            for (java.util.Iterator errs = config.getErrorMessageIterator();
+                    errs.hasNext();) {
+                System.err.println("Chyba: " + errs.next());
+            }
+            System.err.println("Použitie: java " + Main.class.getName());
+            System.err.println(jsap.getUsage());
+            System.err.println();
+            System.err.println(jsap.getHelp());
+            System.exit(1);
+        }
+
+        if (config.getBoolean("napoveda")) {
+            System.out.println(jsap.getUsage());
+            System.out.println();
+            System.out.println(jsap.getHelp());
+        }
+
+        Main wdm = new Main();
+        if (config.getBoolean("vymaz")) {
+            System.out.println("mazem priecinok");
+            wdm.clean();
+        }
+
+        String maxpages = config.getString("maxpages");
+        if (maxpages != null) {
+            if (maxpages.compareTo("null") != 0) {
+                System.out.println("nastavujem maxpages na " + maxpages);
+
+                Setting setting = new Setting();
+                setting.setSetting1(maxpages); //"MaxPagesToFetch"
+                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
+                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
+                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
+                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
+                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
+                wdm.setSettings(setting);
+            }
+        }
+        String politeness = config.getString("politeness");
+        if (politeness != null) {
+            if (politeness.compareTo("null") != 0) {
+                System.out.println("nastavujem politeness na " + politeness);
+                Setting setting = new Setting();
+                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
+                setting.setSetting2(politeness); //"PolitenessDelay"
+                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
+                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
+                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
+                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
+                wdm.setSettings(setting);
+            }
+        }
+        String threshold = config.getString("threshold");
+        if (threshold != null) {
+            if (threshold.compareTo("null") != 0) {
+                System.out.println("nastavujem threshold na " + threshold);
+
+                Setting setting = new Setting();
+                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
+                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
+                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
+                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
+                setting.setSetting5(threshold); //"Threshold"
+                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
+                wdm.setSettings(setting);
+            }
+        }
+        String maxdepth = config.getString("maxdepth");
+        if (maxdepth != null) {
+            if (maxdepth.compareTo("null") != 0) {
+                System.out.println("nastavujem maxdepth na " + maxdepth);
+
+                Setting setting = new Setting();
+                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
+                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
+                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
+                setting.setSetting4(wdm.getSettings().getSetting4()); //"CustomUrlSet"
+                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
+                setting.setSetting6(maxdepth); //"MaxDepth" 
+                wdm.setSettings(setting);
+            }
+        }
+        String customurl = config.getString("customurl");
+        if (customurl != null) {
+            if (customurl.compareTo("null") != 0) {
+                if (!customurl.startsWith("http://")) {
+                    customurl = "http://" + customurl;
+                }
+                if (validateUrl(customurl)) {
+
+                    System.out.println("nastavujem customurl na " + customurl);
+                    System.out.println("zapinam customurl na true");
+
+                    Setting setting = new Setting();
+                    setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
+                    setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
+                    setting.setSetting3(customurl); //"CustomUrl"
+                    setting.setSetting4("true"); //"CustomUrlSet"
+                    setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
+                    setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
+                    wdm.setSettings(setting);
+                } else {
+                    System.err.println("Url " + customurl + " je neplatné. Zadajte prosím platné url.");
+                }
+            }
+        }
+        if (config.contains("setcustomurl")) {
+            boolean setcustomurl = config.getBoolean("setcustomurl");
+            if (setcustomurl) {
+                System.out.println("nastavujem pouzitie custom url na true");
+
+                Setting setting = new Setting();
+                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
+                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
+                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
+                setting.setSetting4("true"); //"CustomUrlSet"
+                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
+                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
+                wdm.setSettings(setting);
+            } else {
+                System.out.println("nastavujem pouzitie custom url na false");
+
+                Setting setting = new Setting();
+                setting.setSetting1(wdm.getSettings().getSetting1()); //"MaxPagesToFetch"
+                setting.setSetting2(wdm.getSettings().getSetting2()); //"PolitenessDelay"
+                setting.setSetting3(wdm.getSettings().getSetting3()); //"CustomUrl"
+                setting.setSetting4("false"); //"CustomUrlSet"
+                setting.setSetting5(wdm.getSettings().getSetting5()); //"Threshold"
+                setting.setSetting6(wdm.getSettings().getSetting6()); //"MaxDepth" 
+                wdm.setSettings(setting);
+            }
+        }
+
+        String url2 = config.getString("spusti");
+        if (url2 != null) {
+            if (url2.compareTo("null") != 0) {
+                if (!url2.startsWith("http://")) {
+                    url2 = "http://" + url2;
+                }
+                if (validateUrl(url2)) {
+                    System.out.println("stahujem aj analyzujem url " + validateUrl(url2));
+                    if (config.getBoolean("diskusia")) {
+                        System.out.println("je to diskusia");
+                        List<String> link = new ArrayList();
+                        link.add(url2);
+                        wdm.setSeeds(link);
+                        wdm.start(true);
+
+                    } else {
+                        System.out.println("nieje to diskusia");
+                        List<String> link = new ArrayList();
+                        link.add(url2);
+                        wdm.setSeeds(link);
+                        wdm.start(false);
+                    }
+                } else {
+                    System.err.println("Url " + url2 + " je neplatné. Zadajte prosím platné url.");
+                }
+            }
+        }
+
+        String url = config.getString("stiahni");
+        if (url != null) {
+            if (url.compareTo("null") != 0) {
+                if (!url.startsWith("http://")) {
+                    url = "http://" + url;
+                }
+                if (validateUrl(url)) {
+                    System.out.println("stahujem z url " + validateUrl(url));
+                    if (config.getBoolean("diskusia")) {
+                        System.out.println("je to diskusia");
+                        System.out.println("je to diskusia");
+                        List<String> link = new ArrayList();
+                        link.add(url);
+                        wdm.setSeeds(link);
+                        wdm.crawlWithoutClean(true);
+
+                    } else {
+                        System.out.println("nieje to diskusia");
+                        List<String> link = new ArrayList();
+                        link.add(url);
+                        wdm.setSeeds(link);
+                        wdm.crawlWithoutClean(false);
+                    }
+                } else {
+                    System.err.println("Url " + url + " je neplatné. Zadajte prosím platné url.");
+                }
+            }
+        }
+
+        if (config.getBoolean("analyzuj")) {
+            System.out.println("analyzujem");
+            if (config.getBoolean("diskusia")) {
+                System.out.println("je to diskusia");
+                wdm.analyze(true);
+            } else {
+                System.out.println("nieje to diskusia");
+                wdm.analyze(false);
+            }
+
+        }
 
         /*
          java -jar wsd-1.0-jar-with-dependencies.jar -s www.cas.sk

@@ -1,37 +1,15 @@
-*{
-    margin: auto;
-}
-
-
-root {
-    display: block;   
-}
-.clear{
-    clear: both;
-}
-.telo{
-    background-color:white;
-    width: 800px;
-    padding: 15px;
-    border:1px solid #BDBDBD;
-    height:auto;
-    padding:25px;
-    border-radius: 10px;
-    padding-bottom:50px;
-}
-
+*{margin: auto;}
+root {display: block;}
 body {
     font-family: georgia, Arial, Tahoma, Verdana;
     background-color:#F2F2F2;
 }
 
-
-
 h1 {
     font-family: Evolution;
     text-align: center;
     font-size: 36px;
-    color:#424242;
+    color:#424242 !important;
 }
 
 h2 {
@@ -40,6 +18,7 @@ h2 {
     font-size: 14px;
     color: #58585B;
     font-weight: normal;
+    margin-bottom: 3px;
 }
 
 h3{
@@ -75,8 +54,66 @@ a:visited {
     color: black;               
     text-decoration: none;
 }
+/*common styles*/
+.clear{
+    clear: both;
+}
 
+.left_half{    
+    width: 50%;
+    float: left;
+    text-align: center;
+}
 
+.right_half{
+    width: 50%;
+    float: right;
+    text-align: center;
+}
+
+/*wrapper*/
+.wrapper{
+    background-color:white;
+    width: 800px;
+    padding: 15px;
+    border:1px solid #BDBDBD;
+    height:auto;
+    padding:25px;
+    border-radius: 10px;
+    padding-bottom:50px;
+}
+
+.main_content{    
+    //border: 1px solid black;
+    padding: 5px;
+}
+
+.settings_icon{
+    float: right;
+    margin-top: -30px;
+    margin-left: -40px;
+    background-image:url(/settings.png);
+    height:35px;
+    width:35px;
+}
+.help_icon{
+    float: right;
+    margin-top: -30px; 
+    background-image:url(/help.png);
+    height:35px;
+    width:35px;
+}
+.back_icon{   
+    float: left;
+    background-image:url(/back.png);
+    height:35px;
+    width:35px;
+}
+
+.language_icon{
+    float: right;
+    margin-top: -50px; 
+}
 
 .popis {
     height: auto;
@@ -101,6 +138,31 @@ a:visited {
     padding:10px;
     border:0px solid #F5DA81;
 
+}
+
+.footer{
+    font-family: Arial;
+    font-size: 14px;
+    padding-top:5px;
+
+}
+
+/*table styles*/
+table{
+    border-collapse: collapse;
+}
+table tr td{
+
+    padding-right: 7px;
+}
+table tr td input[type=text]{
+    width: 400px;
+}
+table tr td input[type=checkbox]{
+    margin-top: 5px;
+}
+#tabs{
+    width:710px;
 }
 
 thead {
@@ -146,27 +208,13 @@ td {
 }
 
 .link{
-    width: 410px !important;
+    width: 600px !important;
     border-radius:30px; 
     padding-left: 3px;
     padding-right: 3px;      
 }
 
-.nastavenia{
-    float: right;
-    margin-top: -60px;
-    background-image:url(/settings1.png);
-    height:35px;
-    width:35px;
 
-}
-
-.footer{
-    font-family: Arial;
-    font-size: 14px;
-    padding-top:5px;
-
-}
 
 .jq{
     color:#2e6e9e !important;
@@ -178,24 +226,11 @@ td {
 ul {
     list-style-type: none
 }
-table{
-    border-collapse: collapse;
-}
-table tr td{
 
-    padding-right: 7px;
-}
-table tr td input[type=text]{
-    width: 400px;
-}
-table tr td input[type=checkbox]{
-    margin-top: 5px;
-}
-#tabs{
-    width:710px;
-}
 
 /* style for preview */
+.graf{width: 90%;}
+
 .preview{ height: auto;
           clear: both;
           width: 100%;
@@ -229,5 +264,3 @@ table tr td input[type=checkbox]{
 .targetDiv{
     padding-left: 10px;
 }
-
-

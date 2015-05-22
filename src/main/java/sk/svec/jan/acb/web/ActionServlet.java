@@ -42,6 +42,7 @@ import sk.svec.jan.acb.utility.Setting;
             ActionServlet.ACTION_OUTPUT,
             ActionServlet.ACTION_SETTINGS,
             ActionServlet.ACTION_GETFILE,
+            ActionServlet.ACTION_HELP,
             ActionServlet.ACTION_INPUT})
 public class ActionServlet extends HttpServlet {
 
@@ -50,6 +51,7 @@ public class ActionServlet extends HttpServlet {
     static final String ACTION_SETTINGS = "/settings";
     static final String ACTION_GETFILE = "/getfile";
     static final String ACTION_PREVIEW = "/preview";
+    static final String ACTION_HELP = "/help";
 
     static final String ATTRIBUTE_OUTPUTS = "outputs";
 
@@ -61,8 +63,14 @@ public class ActionServlet extends HttpServlet {
     static final String JSP_SETTINGS = "/WEB-INF/jsp/settings.jsp";
     static final String JSP_OUTPUT = "/WEB-INF/jsp/output.jsp";
     static final String JSP_PREVIEW = "/WEB-INF/jsp/preview.jsp";
+    static final String JSP_HELP = "/WEB-INF/jsp/help.jsp";
 
     private Main main = new Main();
+
+    private void help(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//                request.setAttribute("xml", "text");
+        request.getRequestDispatcher(JSP_HELP).forward(request, response);
+    }
 
     private void preview(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
@@ -151,19 +159,39 @@ public class ActionServlet extends HttpServlet {
             StringBuilder errors = new StringBuilder();
             List<String> seeds = inputForm.validateAndToSeeds(errors);
             boolean disc = inputForm.isDisc();
-
-            if (request.getParameter("analyze") != null) {
-                try {
-
-//                    webDetectionMain.start(disc);
-                    main.analyze(disc);
-                } catch (Exception ex) {
-                    Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                response.sendRedirect(request.getContextPath() + "/output");
-
-            }
-            if (request.getParameter("submit") != null) {
+//  rozdelene stiahni a analyzuj
+//            if (request.getParameter("analyze") != null) {
+//                try {
+//
+////                    webDetectionMain.start(disc);
+//                    main.analyze(disc);
+//                } catch (Exception ex) {
+//                    Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//                response.sendRedirect(request.getContextPath() + "/output");
+//
+//            }
+//            if (request.getParameter("submit") != null) {
+//                if (seeds == null) {
+//                    request.setAttribute(ATTRIBUTE_ERROR, errors.toString());
+//                    request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
+//                    request.getRequestDispatcher(JSP_INPUT).forward(request, response);
+//                } else {
+//                    main.setSeeds(seeds);
+//                    try {
+////                    webDetectionMain.start(disc);
+//                        main.crawl(disc);
+//                    } catch (Exception ex) {
+//                        Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
+//                    request.setAttribute("downloaded", "Stránky boli stiahnuté.");
+//                    request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
+//                    request.getRequestDispatcher(JSP_INPUT).forward(request, response);
+////                    response.sendRedirect(request.getContextPath() + "/output");
+//
+//                }
+//            }
+            if (request.getParameter("run") != null) {
                 if (seeds == null) {
                     request.setAttribute(ATTRIBUTE_ERROR, errors.toString());
                     request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
@@ -171,15 +199,15 @@ public class ActionServlet extends HttpServlet {
                 } else {
                     main.setSeeds(seeds);
                     try {
-//                    webDetectionMain.start(disc);
-                        main.crawl(disc);
+                        main.clean();
+                        main.start(disc);
                     } catch (Exception ex) {
                         Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    request.setAttribute("downloaded", "Stránky boli stiahnuté.");
-                    request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
-                    request.getRequestDispatcher(JSP_INPUT).forward(request, response);
-//                    response.sendRedirect(request.getContextPath() + "/output");
+                    response.sendRedirect(request.getContextPath() + "/output");
+//                    request.setAttribute("downloaded", "Stránky boli stiahnuté a analyzované.");
+//                    request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
+//                    request.getRequestDispatcher(JSP_INPUT).forward(request, response);
 
                 }
             }
@@ -239,6 +267,8 @@ public class ActionServlet extends HttpServlet {
             getFile(request, response);
         } else if (request.getServletPath().equals(ACTION_PREVIEW)) {
             preview(request, response);
+        } else if (request.getServletPath().equals(ACTION_HELP)) {
+            help(request, response);
         } else {
             throw new RuntimeException("Unknown operation: " + request.getServletPath());
         }

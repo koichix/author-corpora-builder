@@ -1,8 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="../html/header.html"%>  
-<h1><a href="<c:url value="/input"/>">Authorship corpora builder</a></h1>     
-<h2>Aplikácia na automatické extrahovanie informácií z internetových článkov</h2>
-<br/>            
+<%@include file="../html/header.html"%>           
+<h3>Settings</h3>
+<a href="<c:url value="/input"/>" class="back_icon"  title="back"></a><br/><br/>
 
 <c:if test="${not empty error}">
     <div class="ui-widget" >
@@ -72,8 +71,7 @@
 
 </div> <br>
 <p align="center">
-    <input type="Submit" value="Uložiť" name="submit"/>
-    <input type="Submit" value="Späť" name="cancel"/>
+    <input type="Submit" value="Uložiť" name="submit"/>    
 </p>
 </form>
 <br/>

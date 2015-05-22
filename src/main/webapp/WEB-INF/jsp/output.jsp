@@ -1,8 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../html/header.html"%>  
-<h1><a href="<c:url value="/input"/>">Authorship corpora builder</a></h1>     
-<h2>Aplikácia na automatické extrahovanie informácií z internetových článkov</h2>
-<br/>
+<h3>Output</h3>
+<a href="<c:url value="/input"/>" class="back_icon"  title="back"></a><br/><br/>
 
 <div class="popis2">             
     ${info} Súbor s autormi je možné stiahnuť: <c:forEach items="${zip}" var="zi"> ${zi}</c:forEach>         
@@ -31,9 +30,6 @@
         </c:if>
     </c:forEach>
 </div>
-
 <br/>
-<p align="center"><a href="<c:url value="/input"/>" class="jq">Späť</a></p>
-<br>
 
 <%@include file="../html/footer.html"%>   
