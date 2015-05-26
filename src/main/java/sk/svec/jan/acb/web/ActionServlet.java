@@ -19,11 +19,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -43,6 +47,7 @@ import sk.svec.jan.acb.utility.Setting;
             ActionServlet.ACTION_SETTINGS,
             ActionServlet.ACTION_GETFILE,
             ActionServlet.ACTION_HELP,
+            ActionServlet.ACTION_AJAX,
             ActionServlet.ACTION_INPUT})
 public class ActionServlet extends HttpServlet {
 
@@ -52,9 +57,9 @@ public class ActionServlet extends HttpServlet {
     static final String ACTION_GETFILE = "/getfile";
     static final String ACTION_PREVIEW = "/preview";
     static final String ACTION_HELP = "/help";
+    static final String ACTION_AJAX = "/ajax";
 
     static final String ATTRIBUTE_OUTPUTS = "outputs";
-
     static final String ATTRIBUTE_SETTINGS_FORM = "settingsForm";
     static final String ATTRIBUTE_INPUT_FORM = "inputForm";
     static final String ATTRIBUTE_ERROR = "error";
@@ -64,8 +69,28 @@ public class ActionServlet extends HttpServlet {
     static final String JSP_OUTPUT = "/WEB-INF/jsp/output.jsp";
     static final String JSP_PREVIEW = "/WEB-INF/jsp/preview.jsp";
     static final String JSP_HELP = "/WEB-INF/jsp/help.jsp";
+    static final String JSP_AJAX = "/WEB-INF/jsp/ajax.jsp";
 
     private Main main = new Main();
+
+    public void ajax(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//        for (int i = 0; i < 10; i++) {
+//            try {
+//                TimeUnit.MILLISECONDS.sleep(500);
+////                TimeUnit.SECONDS.sleep(1);
+//            } catch (InterruptedException e) {
+//                //Handle exception
+//            }
+//            //System.out.println(i);
+//            PrintWriter writer = response.getWriter();
+//        
+//            writer.print(i);
+//            
+//          writer.flush();
+//        }
+
+       request.getRequestDispatcher(JSP_AJAX).forward(request, response);
+    }
 
     private void help(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 //                request.setAttribute("xml", "text");
@@ -269,6 +294,8 @@ public class ActionServlet extends HttpServlet {
             preview(request, response);
         } else if (request.getServletPath().equals(ACTION_HELP)) {
             help(request, response);
+        } else if (request.getServletPath().equals(ACTION_AJAX)) {
+            ajax(request, response);
         } else {
             throw new RuntimeException("Unknown operation: " + request.getServletPath());
         }

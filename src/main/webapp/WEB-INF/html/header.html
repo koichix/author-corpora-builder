@@ -17,92 +17,75 @@
         <script src="<c:url value="/jquery/external/jquery/jquery.js"/>"></script>
         <script src="<c:url value="/jquery/jquery-ui.js"/>"></script>
         <link rel="stylesheet" href="<c:url value="/jquery/jquery-ui.css"/>">
-        <script>
-            $(function () {
-                $(document).tooltip();
-            });
-
-            
-            $(function () {
-                $("#loading").dialog({
+        <script>                  
+                    $(function () {
+                    $(document).tooltip();
+                    });
+                    $(function () {
+                    $("#loading").dialog({
                     draggable: false,
-                    dialogClass: 'no-close',
-                    title: "Čakajte prosím",
-                    autoOpen: false,
-                    show: {
-                        effect: "blind",
-                        duration: 1000
-                    },
-                    hide: {
-                        effect: "blind",
-                        duration: 1000
-                    }
-                });
-
-                $("#submit").click(function () {
+                            dialogClass: 'no-close',
+                            title: "Čakajte prosím",
+                            autoOpen: false,
+                            show: {
+                            effect: "blind",
+                                    duration: 1000
+                            },
+                            hide: {
+                            effect: "blind",
+                                    duration: 1000
+                            }
+                    });
+                            $("#submit").click(function () {
                     $("#loading").dialog("open");
-                });
-
-                $("#analyze").click(function () {
+                    });
+                            $("#analyze").click(function () {
                     $("#loading").dialog("open");
-                });
-
-                $("#run").click(function () {
+                    });
+                            $("#run").click(function () {
                     $("#loading").dialog("open");
-                });
-
-            });
-
-            $(function () {
-                $("#tabs").tabs();
-            });
-
-            $(function () {
-                $(".jq").button();
-            });
-
-
-            $(document).ready(function () {
-                $('#checkbox1').change(function () {
-                    if (this.checked)
-                        $('#autoUpdate').fadeOut('slow');
+                    });
+                    });
+                    $(function () {
+                    $("#tabs").tabs();
+                    });
+                    $(function () {
+                    $(".jq").button();
+                    });
+                    $(document).ready(function () {
+            $('#checkbox1').change(function () {
+            if (this.checked)
+                    $('#autoUpdate').fadeOut('slow');
                     else
-                        $('#autoUpdate').fadeIn('slow');
-
-                });
-
-                $('#checkbox1').change(function () {
-                    if (this.checked)
-                        $('#autoUpdate').fadeOut('slow');
+                    $('#autoUpdate').fadeIn('slow');
+            });
+                    $('#checkbox1').change(function () {
+            if (this.checked)
+                    $('#autoUpdate').fadeOut('slow');
                     else
-                        $('#autoUpdate').fadeIn('slow');
+                    $('#autoUpdate').fadeIn('slow');
+            });
+                    if ($("#checkbox1").is(':checked'))
+                    $("#autoUpdate").hide(); // checked
+                    else
+                    $("#autoUpdate").show(); // unchecked
 
-                });
-
-                if ($("#checkbox1").is(':checked'))
-                    $("#autoUpdate").hide();  // checked
-                else
-                    $("#autoUpdate").show();  // unchecked
-
-                jQuery('.targetDiv').hide(); //hide all divs on load
+                    jQuery('.targetDiv').hide(); //hide all divs on load
 
             });
-
-            //for preview
-            jQuery(function () {
-                jQuery('#showall').click(function () {
+                    //for preview
+                    jQuery(function () {
+                    jQuery('#showall').click(function () {
                     jQuery('.targetDiv').show();
-                });
-                jQuery('#hideall').click(function () {
+                    });
+                            jQuery('#hideall').click(function () {
                     jQuery('.targetDiv').hide();
-                });
-                jQuery('.showSingle').click(function () {
+                    });
+                            jQuery('.showSingle').click(function () {
                     //jQuery('.targetDiv').hide();
                     jQuery('#div' + $(this).attr('target')).toggle();
-                });
-            });
-
-        </script>
+                    });
+                    });        </script>
         <style>
             .no-close .ui-dialog-titlebar-close {display: none }
             label {

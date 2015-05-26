@@ -8,10 +8,10 @@
     <h2>Autorský korpus z 20 českých a slovenských domén</h2>
 
     <div class="left_half">
-        Success rate of the first 10 sites:<a href="/clanky1.png" target="_blank"><img src="/clanky1.png" class="graf"/></a> 
+        Success rate of the first 10 sites:<a href="/images/clanky1.png" target="_blank"><img src="/images/clanky1.png" class="graf"/></a> 
     </div>
     <div class="right_half">
-        Success rate of next 10 sites: <a href="/clanky2.png" target="_blank"><img src="/clanky2.png" class="graf"/></a>
+        Success rate of next 10 sites: <a href="/images/clanky2.png" target="_blank"><img src="/images/clanky2.png" class="graf"/></a>
     </div>
    <br class="clear"/>
 </div>

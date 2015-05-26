@@ -32,13 +32,13 @@
                 <td><input type="Submit" value="Stiahni" title="Stiahne určený počet webstránok z danej domény." name="submit" id="submit"/></td>
                 <td><input type="Submit" value="Analyzuj" id="analyze" title="Analyzuje stiahnuté dáta." name="analyze"/></td>
                 --> 
-                
+
                 <td><input type="Submit" value="" id="run" title="Stiahne a analyzuje stránky zo zvolenej domény." name="run" class="run_icon"/></td>
             </tr>
 
         </table> 
     </form>
-    <div id="loading" style="display:none;"><img src="loading.gif" alt="loading" style="float:left"  /><p style="float:left;margin-top: 6px;margin-left: 2px">Načítavam</p></div>
+    <div id="loading" style="display:none;"><img src="/images/design/loading.gif" alt="loading" style="float:left"  /><p style="float:left;margin-top: 6px;margin-left: 2px">Načítavam</p></div>
     <br/>
     <h3>Vzorové URL adresy:</h3>
     <p class="vzor">

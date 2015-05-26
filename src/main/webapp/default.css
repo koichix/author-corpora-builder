@@ -92,26 +92,26 @@ a:visited {
     float: right;
     margin-top: -30px;
     margin-left: -40px;
-    background-image:url(/settings.png);
+    background-image:url(/images/design/settings.png);
     height:35px;
     width:35px;
 }
 .help_icon{
     float: right;
     margin-top: -30px; 
-    background-image:url(/help.png);
+    background-image:url(/images/design/help.png);
     height:35px;
     width:35px;
 }
 .back_icon{   
     float: left;
-    background-image:url(/back.png);
+    background-image:url(/images/design/back.png);
     height:35px;
     width:35px;
 }
 .run_icon{  
     float: left;
-    background-image:url(/run2.png);
+    background-image:url(/images/design/run2.png);
     background-position: center center;
     background-repeat: no-repeat;
     height:35px;
@@ -123,7 +123,7 @@ a:visited {
    background-image:url(/run2.png); 
 }*/
 .run_icon:active{  
-   background-image:url(/run.png); 
+   background-image:url(/images/design/run.png); 
 }
 
 .language_icon{
@@ -279,4 +279,8 @@ ul {
 
 .targetDiv{
     padding-left: 10px;
+}
+/*style for autocomplete*/
+.popupItem{
+    color:black !important;
 }
