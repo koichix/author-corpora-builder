@@ -287,7 +287,7 @@ public class Main {
                         String link = findLink(listOfFile);
                         String xmlPath = listOfFile.getPath();
                         //System.out.println( xmlPath+ " " + link);
-                        link = (link.length() > 36) ? link.substring(0, 40) + "..." : link;
+                        link = (link.length() > 40) ? link.substring(0, 40) + "..." : link;
                         output.add("<td><a href=\"" + link + "\">" + link + "</a></td> <td> <a href=\"/getfile?name=" + xmlPath + "\"> " + xmlPath.substring(xmlPath.length() - 36) + "</a></td>");
                     }
                 }
