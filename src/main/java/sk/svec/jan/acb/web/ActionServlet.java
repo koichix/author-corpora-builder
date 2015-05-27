@@ -19,15 +19,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -89,7 +85,7 @@ public class ActionServlet extends HttpServlet {
 //          writer.flush();
 //        }
 
-       request.getRequestDispatcher(JSP_AJAX).forward(request, response);
+        request.getRequestDispatcher(JSP_AJAX).forward(request, response);
     }
 
     private void help(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -229,7 +225,8 @@ public class ActionServlet extends HttpServlet {
                     } catch (Exception ex) {
                         Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    response.sendRedirect(request.getContextPath() + "/output");
+//                    response.sendRedirect(request.getContextPath() + "/output");
+                    response.sendRedirect("output");
 //                    request.setAttribute("downloaded", "Stránky boli stiahnuté a analyzované.");
 //                    request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
 //                    request.getRequestDispatcher(JSP_INPUT).forward(request, response);
