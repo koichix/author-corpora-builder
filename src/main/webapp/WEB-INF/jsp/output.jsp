@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../html/header.html"%>  
 <h3>Output</h3>
-<a href="<c:url value="/input"/>" class="back_icon"  title="back"></a><br/><br/>
+<a href="<c:url value="input"/>" class="back_icon"  title="back"></a><br/><br/>
 
 <div class="popis2">             
     ${info} Súbor s autormi je možné stiahnuť: <c:forEach items="${zip}" var="zi"> ${zi}</c:forEach>         

@@ -1,1 +1,1 @@
-<jsp:forward page="/input"/>
+<jsp:forward page="input"/>

@@ -22,7 +22,7 @@
 </c:if>
 
 <div class="popis2"> <h4>Zadajte URL adresu webstránky:</h4>
-    <form action="<c:url value="/input"/>" method="post" name="form" >
+    <form action="<c:url value="input"/>" method="post" name="form" >
 
         <table>
             <tr>                  
@@ -38,7 +38,7 @@
 
         </table> 
     </form>
-    <div id="loading" style="display:none;"><img src="/images/design/loading.gif" alt="loading" style="float:left"  /><p style="float:left;margin-top: 6px;margin-left: 2px">Načítavam</p></div>
+    <div id="loading" style="display:none;"><img src="images/design/loading.gif" alt="loading" style="float:left"  /><p style="float:left;margin-top: 6px;margin-left: 2px">Načítavam</p></div>
     <br/>
     <h3>Vzorové URL adresy:</h3>
     <p class="vzor">

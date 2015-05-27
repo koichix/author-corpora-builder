@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../html/header.html"%>  
 <h3>Ako používať aplikáciu (popis jednotlivých funkcií):</h3>
-<a href="<c:url value="/input"/>" class="back_icon"  title="back"></a><br/><br/>
+<a href="<c:url value="input"/>" class="back_icon"  title="back"></a><br/><br/>
 <p class="popis">
     <strong>Nastavenia</strong> - nastavenie počtu stiahnutých článkov, doby čakania medzi stiahnutím viacerých článkov a iných parametrov. <br/>
     <strong>Stiahni</strong> - aplikácia stiahne určený počet stránok, ktoré sú súčasťou obsahu zadanej webstránky a jej podstránok. V prípade potreby stiahnutia len článkov typu "diskusia/fórum/komentáre..", zaškrtneme políčko diskusia. <br/>

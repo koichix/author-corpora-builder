@@ -12,11 +12,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Authorship corpora builder</title>
-        <link rel="stylesheet" href="<c:url value="/default.css"/>" type="text/css"> 
+        <link rel="stylesheet" href="<c:url value="default.css"/>" type="text/css"> 
 
-        <script src="<c:url value="/jquery/external/jquery/jquery.js"/>"></script>
-        <script src="<c:url value="/jquery/jquery-ui.js"/>"></script>
-        <link rel="stylesheet" href="<c:url value="/jquery/jquery-ui.css"/>">
+        <script src="<c:url value="jquery/external/jquery/jquery.js"/>"></script>
+        <script src="<c:url value="jquery/jquery-ui.js"/>"></script>
+        <link rel="stylesheet" href="<c:url value="jquery/jquery-ui.css"/>">
         <script>                  
                     $(function () {
                     $(document).tooltip();
@@ -97,7 +97,7 @@
 
     <body>     
         <div class="wrapper">
-            <h1><a href="<c:url value="/input"/>">Authorship corpora builder</a></h1>           
+            <h1><a href="<c:url value="input"/>">Authorship corpora builder</a></h1>           
 
             <!--language switcher -->
             <form>
@@ -106,8 +106,8 @@
                     <option value="sk" ${language == 'sk' ? 'selected' : ''}>Slovak</option>
                 </select>
             </form>  
-            <a href="<c:url value="/help"/>" class="help_icon" title="Help"></a>
-            <a href="<c:url value="/settings"/>" class="settings_icon" title="Nastavenia"></a>          
+            <a href="<c:url value="help"/>" class="help_icon" title="Help"></a>
+            <a href="<c:url value="settings"/>" class="settings_icon" title="Nastavenia"></a>          
             <br/> 
 
             <div class="popis">
@@ -118,7 +118,7 @@
                     <br/><br/>
                     Aplikáciu si môžete stiahnuť na: <a href="https://github.com/koichix/author-corpora-builder">GIThube.</a>  
                     <br/>
-                    Vybudovaný autorský korpus si môžete stiahnuť: <a href="/getfile?name=corpus\author_corpus.zip">author_corpus.zip</a> alebo zobraziť <a href="<c:url value="/preview"/>" class="jq" >Preview</a><br/>
+                    Vybudovaný autorský korpus si môžete stiahnuť: <a href="getfile?name=corpus\author_corpus.zip">author_corpus.zip</a> alebo zobraziť <a href="<c:url value="preview"/>" class="jq" >Preview</a><br/>
                 </p>
 
             </div>

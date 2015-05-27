@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../html/header.html"%>           
 <h3>Settings</h3>
-<a href="<c:url value="/input"/>" class="back_icon"  title="back"></a><br/><br/>
+<a href="<c:url value="input"/>" class="back_icon"  title="back"></a><br/><br/>
 
 <c:if test="${not empty error}">
     <div class="ui-widget" >
@@ -14,7 +14,7 @@
 </c:if>
 
 <div class="popis2">      
-    <form action="<c:url value="/settings"/>" method="post">
+    <form action="<c:url value="settings"/>" method="post">
 
         <c:if test="${not empty error}">
             <table>
