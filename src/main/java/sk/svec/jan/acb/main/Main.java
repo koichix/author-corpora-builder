@@ -332,7 +332,7 @@ public class Main {
                         String xmlPath = listOfFile.getPath();
 
                         if (listOfFile.getName().compareTo("deletedLinksLog.xml") != 0) {//don't view deletetlinksLog.xml    
-                            String link = "<a href=\"/preview?name=" + xmlPath + "\"> " + xmlPath.substring(xmlPath.length() - 36) + "</a>";
+                            String link = "<a href=\"preview?name=" + xmlPath + "\"> " + xmlPath.substring(xmlPath.length() - 36) + "</a>";
                             //System.out.println(link);
                             output.add(link);
                         }

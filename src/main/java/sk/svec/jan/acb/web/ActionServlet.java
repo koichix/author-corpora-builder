@@ -225,12 +225,13 @@ public class ActionServlet extends HttpServlet {
                     } catch (Exception ex) {
                         Logger.getLogger(ActionServlet.class.getName()).log(Level.SEVERE, null, ex);
                     }
+//                    pre nlp projekty
+                    response.sendRedirect("http://nlp.fi.muni.cz/projekty/acb/output");
 //                    response.sendRedirect(request.getContextPath() + "/output");
-                    response.sendRedirect("output");
+
 //                    request.setAttribute("downloaded", "Stránky boli stiahnuté a analyzované.");
 //                    request.setAttribute(ATTRIBUTE_INPUT_FORM, inputForm);
 //                    request.getRequestDispatcher(JSP_INPUT).forward(request, response);
-
                 }
             }
         } else {
