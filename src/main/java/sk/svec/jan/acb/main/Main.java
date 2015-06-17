@@ -105,7 +105,7 @@ public class Main {
         for (String p : directories) {
             if (new File(p + "author.zip").exists()) {
                 String authorPath = p + "author.zip";
-                zipPath.add("<a href=\"/getfile?name=" + authorPath + "\"> " + authorPath.substring(authorPath.indexOf("/") + 1, authorPath.lastIndexOf("/")).replace("/", ".") + ".zip</a>");
+                zipPath.add("<a href=\"getfile?name=" + authorPath + "\"> " + authorPath.substring(authorPath.indexOf("/") + 1, authorPath.lastIndexOf("/")).replace("/", ".") + ".zip</a>");
             }
 
         }
