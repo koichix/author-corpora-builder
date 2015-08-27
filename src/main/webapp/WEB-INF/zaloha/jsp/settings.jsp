@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../html/header.html"%>           
+<h3>Settings</h3>
+<a href="<c:url value="input"/>" class="back_icon"  title="back"></a><br/><br/>
 
 <c:if test="${not empty error}">
     <div class="ui-widget" >
@@ -11,18 +13,7 @@
     <br/>
 </c:if>
 
-<div class="containerThreeColumn">
-    <strong>Nastavenia - Popis jednotlivých nastavení:</strong><br/><br/>
-    <ul>       
-        <li><strong>Počet stránok</strong> - nastavenie počtu stiahnutých článkov. </li>
-        <li><strong>Doba čakania (politeness)</strong> - nastavenie doby čakania medzi stiahnutím viacerých stránok v milisekundách. </li>
-        <li><strong>Vlastné URL</strong> - nastavenie filtra URL adresy, pomocou ktorého bude filtrovať sťahované stránky.</li>
-        <li><strong>Prahová hodnota</strong> - nastavenie váhy prahovej hodnoty pre čistenie stránky od boilerplate pomocou SST.</li>
-        <li><strong>Hĺbka zanorenia crawleru</strong> - celé číslo od 1 do N symbolizuje hĺbku zanorenia crawleru vrámci URL adresy. Napr.: na stránke "kultura.sme.sk/clanok1" je hĺbka zanorenia 1 časť URL adresy "sme.sk". Hĺbka zanorenia -1 znamená, že sa pôjde do maximálnej hĺbky URL.</li>
-    </ul>
-</div>
-
-<div class="containerThreeColumnBlack">      
+<div class="popis2">      
     <form action="<c:url value="settings"/>" method="post">
 
         <c:if test="${not empty error}">
@@ -74,12 +65,25 @@
                     <th>Hĺbka zanorenia crawleru:</th>
                     <td><input type="text" name="setting6" title="Hĺbka zanorenia crawleru [celé číslo]." value="${settingsForm.setting6}"/></td>
                 </tr>    
+
             </table>              
         </c:if>
-        <p align="center">
-            <input type="Submit" value="" title="Uložiť nastavenia" name="submit" class="save_icon"/>    
-        </p>
-    </form>
-</div>
+
+</div> <br>
+<p align="center">
+    <input type="Submit" value="Uložiť" name="submit" class="jq"/>    
+</p>
+</form>
+<br/>
+<h3>Popis jednotlivých nastavení:</h3> <br/>  
+<ul class="popis">
+    <li><strong>Počet stránok</strong> - nastavenie počtu stiahnutých článkov. </li>
+    <li><strong>Doba čakania (politeness)</strong> - nastavenie doby čakania medzi stiahnutím viacerých stránok v milisekundách. </li>
+    <li><strong>Vlastné URL</strong> - nastavenie filtra URL adresy, pomocou ktorého bude filtrovať sťahované stránky.</li>
+    <li><strong>Prahová hodnota</strong> - nastavenie váhy prahovej hodnoty pre čistenie stránky od boilerplate pomocou SST.</li>
+    <li><strong>Hĺbka zanorenia crawleru</strong> - celé číslo od 1 do N symbolizuje hĺbku zanorenia crawleru vrámci URL adresy. Napr.: na stránke "kultura.sme.sk/clanok1" je hĺbka zanorenia 1 časť URL adresy "sme.sk". Hĺbka zanorenia -1 znamená, že sa pôjde do maximálnej hĺbky URL.</li>
+</ul>
+
+<br><br>
 
 <%@include file="../html/footer.html"%>   

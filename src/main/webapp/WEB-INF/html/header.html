@@ -13,79 +13,91 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Authorship corpora builder</title>
         <link rel="stylesheet" href="<c:url value="default.css"/>" type="text/css"> 
-
         <script src="<c:url value="jquery/external/jquery/jquery.js"/>"></script>
         <script src="<c:url value="jquery/jquery-ui.js"/>"></script>
         <link rel="stylesheet" href="<c:url value="jquery/jquery-ui.css"/>">
-        <script>                  
-                    $(function () {
-                    $(document).tooltip();
-                    });
-                    $(function () {
-                    $("#loading").dialog({
+        <script src="<c:url value="jquery/jquery.easing.js"/>"></script>
+        <script src="<c:url value="jquery/jqueryFileTree.js"/>"></script>
+        <link rel="stylesheet" href="<c:url value="jquery/jqueryFileTree.css"/>">      
+        <script>
+            $(function () {
+                $(document).tooltip();
+            });
+            $(function () {
+                $("#loading").dialog({
                     draggable: false,
-                            dialogClass: 'no-close',
-                            title: "Čakajte prosím",
-                            autoOpen: false,
-                            show: {
-                            effect: "blind",
-                                    duration: 1000
-                            },
-                            hide: {
-                            effect: "blind",
-                                    duration: 1000
-                            }
-                    });
-                            $("#submit").click(function () {
+                    dialogClass: 'no-close',
+                    title: "Čakajte prosím",
+                    autoOpen: false,
+                    show: {
+                        effect: "blind",
+                        duration: 1000
+                    },
+                    hide: {
+                        effect: "blind",
+                        duration: 1000
+                    }
+                });
+                $("#submit").click(function () {
                     $("#loading").dialog("open");
-                    });
-                            $("#analyze").click(function () {
+                });
+                $("#analyze").click(function () {
                     $("#loading").dialog("open");
-                    });
-                            $("#run").click(function () {
+                });
+                $("#run").click(function () {
                     $("#loading").dialog("open");
-                    });
-                    });
-                    $(function () {
-                    $("#tabs").tabs();
-                    });
-                    $(function () {
-                    $(".jq").button();
-                    });
-                    $(document).ready(function () {
-            $('#checkbox1').change(function () {
-            if (this.checked)
-                    $('#autoUpdate').fadeOut('slow');
-                    else
-                    $('#autoUpdate').fadeIn('slow');
+                });
             });
-                    $('#checkbox1').change(function () {
-            if (this.checked)
-                    $('#autoUpdate').fadeOut('slow');
-                    else
-                    $('#autoUpdate').fadeIn('slow');
+            $(function () {
+                $("#tabs").tabs();
             });
-                    if ($("#checkbox1").is(':checked'))
+            $(function () {
+                $(".jq").button();
+            });
+            $(document).ready(function () {
+                $('#checkbox1').change(function () {
+                    if (this.checked)
+                        $('#autoUpdate').fadeOut('slow');
+                    else
+                        $('#autoUpdate').fadeIn('slow');
+                });
+                $('#checkbox1').change(function () {
+                    if (this.checked)
+                        $('#autoUpdate').fadeOut('slow');
+                    else
+                        $('#autoUpdate').fadeIn('slow');
+                });
+                if ($("#checkbox1").is(':checked'))
                     $("#autoUpdate").hide(); // checked
-                    else
+                else
                     $("#autoUpdate").show(); // unchecked
 
-                    jQuery('.targetDiv').hide(); //hide all divs on load
+                jQuery('.targetDiv').hide(); //hide all divs on load
 
             });
-                    //for preview
-                    jQuery(function () {
-                    jQuery('#showall').click(function () {
+            //for preview
+            jQuery(function () {
+                jQuery('#showall').click(function () {
                     jQuery('.targetDiv').show();
-                    });
-                            jQuery('#hideall').click(function () {
+                });
+                jQuery('#hideall').click(function () {
                     jQuery('.targetDiv').hide();
-                    });
-                            jQuery('.showSingle').click(function () {
+                });
+                jQuery('.showSingle').click(function () {
                     //jQuery('.targetDiv').hide();
                     jQuery('#div' + $(this).attr('target')).toggle();
-                    });
-                    });        </script>
+                });
+            });
+
+            $(document).ready(function () {
+                $('#fileTree').fileTree({root: '/', script: '<c:url value="jquery/connectors/jqueryFileTree.jsp"/>'}, function (file) {
+                    //alert(file);
+                     location.href = 'preview?name='+ file;                        
+                });
+            });
+        </script>
+
+
         <style>
             .no-close .ui-dialog-titlebar-close {display: none }
             label {
@@ -97,7 +109,7 @@
 
     <body>     
         <div class="wrapper">
-            <h1><a href="<c:url value="input"/>">Authorship corpora builder</a></h1>           
+            <h1><a href="<c:url value="input"/>" style="color:black !important;">Authorship corpora builder</a></h1>           
 
             <!--language switcher -->
             <form>
@@ -106,22 +118,5 @@
                     <option value="sk" ${language == 'sk' ? 'selected' : ''}>Slovak</option>
                 </select>
             </form>  
-            <a href="<c:url value="help"/>" class="help_icon" title="Help"></a>
-            <a href="<c:url value="settings"/>" class="settings_icon" title="Nastavenia"></a>          
-            <br/> 
-
-            <div class="popis">
-                <h2>Aplikácia na automatické extrahovanie informácií z internetových článkov</h2>
-                <p>
-                    Aplikácia slúži na automatickú detekciu obsahu internetových článkov. Po zadaní url postupne prejde určený počet článkov (možnosť nastaviť v nastaveniach), a extrahuje z nich nadpis, autora, dátum a text článku. Výstupom je ZIP súbor, v ktorom sú XML súbory vytvorené na základe mena autora a k nemu priradené jeho články.                   
-
-                    <br/><br/>
-                    Aplikáciu si môžete stiahnuť na: <a href="https://github.com/koichix/author-corpora-builder">GIThube.</a>  
-                    <br/>
-                    Vybudovaný autorský korpus si môžete stiahnuť: <a href="getfile?name=corpus/author_corpus.zip">author_corpus.zip</a> alebo zobraziť <a href="<c:url value="preview"/>" class="jq" >Preview</a><br/>
-                </p>
-
-            </div>
-
 
             <div class="main_content clear">

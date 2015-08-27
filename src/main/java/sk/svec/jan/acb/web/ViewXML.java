@@ -66,7 +66,7 @@ public class ViewXML {
         NodeList elementsByTagName = rootElement.getElementsByTagName("Name");
 
         String autor = elementsByTagName.item(0).getTextContent();
-        xml.append("Autor: " + autor);
+        xml.append("<strong>Autor:</strong> " + autor);
 
         NodeList allArticles = rootElement.getElementsByTagName("Article");
         int articlesCount = allArticles.getLength();
@@ -77,11 +77,11 @@ public class ViewXML {
             nadpis = childNodes.item(1).getTextContent();
             datum = childNodes.item(2).getTextContent();
             text = childNodes.item(3).getTextContent();
-            xml.append("<br/><br/>Článok číslo:" + (i + 1) + "<br/>");
-            xml.append("Link: <a href=\"" + link + "\" target=\"_blank\">" + link + "</a><br/>"
-                    + "Nadpis: " + nadpis + "<br/>"
-                    + "Dátum: " + datum + "<br/>"
-                    + "Text: " + text);
+            xml.append("<br/><br/><strong>Článok číslo:</strong>" + (i + 1) + "<br/>");
+            xml.append("<strong>Link:</strong> <a href=\"" + link + "\" target=\"_blank\">" + link + "</a><br/>"
+                    + "<strong>Nadpis:</strong> " + nadpis + "<br/>"
+                    + "<strong>Dátum:</strong> " + datum + "<br/>"
+                    + "<strong>Text:</strong><br/> " + text);
         }
 //        
 //        NodeList childNodes = rootElement.getElementsByTagName("Article").item(0).getChildNodes();
