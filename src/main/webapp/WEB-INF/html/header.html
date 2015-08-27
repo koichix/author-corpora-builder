@@ -90,7 +90,7 @@
             });
 
             $(document).ready(function () {
-                $('#fileTree').fileTree({root: '/', script: '<c:url value="jquery/connectors/jqueryFileTree.jsp"/>'}, function (file) {
+                $('#fileTree').fileTree({root: '/home/koichi/apache-tomcat-8.0.15/bin/corpus/', script: '<c:url value="jquery/connectors/jqueryFileTree.jsp"/>'}, function (file) {
                     //alert(file);
                      location.href = 'preview?name='+ file;                        
                 });
