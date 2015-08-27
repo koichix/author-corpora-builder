@@ -288,7 +288,9 @@ public class Main {
                         String xmlPath = listOfFile.getPath();
                         //System.out.println( xmlPath+ " " + link);
                         link = (link.length() > 40) ? link.substring(0, 40) + "..." : link;
-                        output.add("<td><a href=\"" + link + "\">" + link + "</a></td> <td> <a href=\"/getfile?name=" + xmlPath + "\"> " + xmlPath.substring(xmlPath.length() - 36) + "</a></td>");
+                        // pre nlp projekty                                
+                        output.add("<td><a href=\"" + link + "\">" + link + "</a></td> <td> <a href=\"http://nlp.fi.muni.cz/projekty/acb/getfile?name=" + xmlPath + "\"> " + xmlPath.substring(xmlPath.length() - 36) + "</a></td>");
+                        //      output.add("<td><a href=\"" + link + "\">" + link + "</a></td> <td> <a href=\"/getfile?name=" + xmlPath + "\"> " + xmlPath.substring(xmlPath.length() - 36) + "</a></td>");
                     }
                 }
             }
