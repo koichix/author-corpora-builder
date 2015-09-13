@@ -11,8 +11,8 @@
     <br/>
 </c:if>
 
-<div class="containerThreeColumn">
-    <strong>Nastavenia - Popis jednotlivých nastavení:</strong><br/><br/>
+<div class="containerThreeColumn">    
+    <strong>Nastavenia - popis jednotlivých nastavení:</strong><br/><br/>
     <ul>       
         <li><strong>Počet stránok</strong> - nastavenie počtu stiahnutých článkov. </li>
         <li><strong>Doba čakania (politeness)</strong> - nastavenie doby čakania medzi stiahnutím viacerých stránok v milisekundách. </li>

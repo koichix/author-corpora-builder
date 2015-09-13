@@ -24,7 +24,7 @@
 <div class="container">
     <a class="center" href="<c:url value="help"/>">
         <img src="images/design/info.png">
-        <br/>INFO
+        <br/><fmt:message key="menu.info" />
     </a>
 </div>        
 
@@ -33,7 +33,7 @@
 
         <table>
             <tr>                  
-                <td><input type="text" name="link1" class="link" placeholder="Zadaj vlastnú URL alebo vyber vzorovú" title="Miesto pre vloženie url adresy." value="${inputForm.link1}"/></td>
+                <td><input type="text" name="link1" class="link" placeholder="<fmt:message key="homepage.input" />" title="<fmt:message key="homepage.input.info" />" value="${inputForm.link1}"/></td>
                 <!-- <td><label><input type="checkbox" name="disc" title="Zaškrtnúť, v prípade že chceme analyzovať diskusie."  value="true"/>diskusia</label></td>
               
                 <td><input type="Submit" value="Stiahni" title="Stiahne určený počet webstránok z danej domény." name="submit" id="submit"/></td>
@@ -69,21 +69,21 @@
 <div class="container">
     <a class="center" href="<c:url value="preview"/>">
         <img src="images/design/preview.png">
-        <br/>VÝSLEDKY
+        <br/><fmt:message key="menu.vysledky" />
     </a>
 </div>   
         
         <div class="container">
     <a class="center" href="<c:url value="settings"/>">
         <img src="images/design/settings.png">
-        <br/>NASTAVENIA
+        <br/><fmt:message key="menu.nastavenia" />
     </a>
 </div>   
         
         <div class="container">
     <a class="center" href="<c:url value="author"/>">
         <img src="images/design/author.png">
-        <br/>O AUTOROVI
+        <br/><fmt:message key="menu.autor" />
     </a>
 </div>   
         

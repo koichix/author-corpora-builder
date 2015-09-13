@@ -92,9 +92,15 @@
             $(document).ready(function () {
                 $('#fileTree').fileTree({root: '/home/koichi/apache-tomcat-8.0.15/bin/corpus/', script: '<c:url value="jquery/connectors/jqueryFileTree.jsp"/>'}, function (file) {
                     //alert(file);
-                     location.href = 'preview?name='+ file;                        
+                    location.href = 'preview?name=' + file;
                 });
             });
+
+            $("select#language").css("background-image", 'url(images/design/' + $("select#language").val() + '.png)');
+            $("select#language").change(function () {
+                $("select#language").css("background-image", 'url(images/design/' + $("select#language").val() + '.png)');
+            });
+
         </script>
 
 
@@ -109,7 +115,7 @@
 
     <body>     
         <div class="wrapper">
-            <h1><a href="<c:url value="input"/>" style="color:black !important;">Authorship corpora builder</a></h1>           
+            <h1><a href="<c:url value="input"/>" style="color:#605D55 !important;">Authorship corpora builder</a></h1>           
 
             <!--language switcher -->
             <form>

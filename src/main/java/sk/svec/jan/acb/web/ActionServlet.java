@@ -43,6 +43,7 @@ import sk.svec.jan.acb.utility.Setting;
             ActionServlet.ACTION_SETTINGS,
             ActionServlet.ACTION_GETFILE,
             ActionServlet.ACTION_HELP,
+            ActionServlet.ACTION_AUTHOR,
             ActionServlet.ACTION_AJAX,
             ActionServlet.ACTION_INPUT})
 public class ActionServlet extends HttpServlet {
@@ -53,6 +54,7 @@ public class ActionServlet extends HttpServlet {
     static final String ACTION_GETFILE = "/getfile";
     static final String ACTION_PREVIEW = "/preview";
     static final String ACTION_HELP = "/help";
+    static final String ACTION_AUTHOR = "/author";
     static final String ACTION_AJAX = "/ajax";
 
     static final String ATTRIBUTE_OUTPUTS = "outputs";
@@ -65,6 +67,7 @@ public class ActionServlet extends HttpServlet {
     static final String JSP_OUTPUT = "/WEB-INF/jsp/output.jsp";
     static final String JSP_PREVIEW = "/WEB-INF/jsp/preview.jsp";
     static final String JSP_HELP = "/WEB-INF/jsp/help.jsp";
+    static final String JSP_AUTHOR = "/WEB-INF/jsp/author.jsp";
     static final String JSP_AJAX = "/WEB-INF/jsp/ajax.jsp";
 
     private Main main = new Main();
@@ -91,6 +94,11 @@ public class ActionServlet extends HttpServlet {
     private void help(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 //                request.setAttribute("xml", "text");
         request.getRequestDispatcher(JSP_HELP).forward(request, response);
+    }
+
+    private void author(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//                request.setAttribute("xml", "text");
+        request.getRequestDispatcher(JSP_AUTHOR).forward(request, response);
     }
 
     private void preview(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -292,6 +300,8 @@ public class ActionServlet extends HttpServlet {
             preview(request, response);
         } else if (request.getServletPath().equals(ACTION_HELP)) {
             help(request, response);
+        } else if (request.getServletPath().equals(ACTION_AUTHOR)) {
+            author(request, response);
         } else if (request.getServletPath().equals(ACTION_AJAX)) {
             ajax(request, response);
         } else {

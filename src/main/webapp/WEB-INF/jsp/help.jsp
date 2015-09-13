@@ -3,9 +3,9 @@
 <div class="containerHalfBlack">
     <div class="center">  
         <strong>
-        Popis aplikácie<br/>
+        Popis aplikácie <img src="images/design/right.png" style="width: 45px;height: 45px; margin-bottom: -1.25em; margin-left: 5px;"><br/>
         </strong>
-        <img src="images/design/right.png">
+        
     </div>
 
 </div>
@@ -23,12 +23,11 @@
 </p> 
 <div class="containerHalfBlack">
     <div class="center">
-        <strong>
-            Ako používať aplikáciu<br/>
-            (popis jednotlivých funkcií)<br/>
+              <img src="images/design/left.png" style="width: 45px;height: 45px; margin-bottom: -1.2em; margin-right:  5px;">
+      <strong>
+     Návod ako používať aplikáciu<br/>
         </strong>
-        <img src="images/design/left.png">
-    </div>
+       </div>
 
 </div>
 

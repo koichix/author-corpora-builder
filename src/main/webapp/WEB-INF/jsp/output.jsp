@@ -30,17 +30,16 @@
     <div class="containerThreeColumnBlack">
       
     <div class="outputTable">
-          <div class="outputHeading">Výstup (zoznam článkov spolu s extrahovanými dátami)</div>
+        <div class="outputHeading"><span class="black">Výstup</span> (zoznam článkov spolu s extrahovanými dátami)</div>
         <table><thead><td>Pôvodný článok</td><td>Extrahované dáta</td></thead>     
             <c:forEach items="${outputs}" var="output" varStatus="loopStatus">    
             <tr class="evenOdd">  ${output}  </tr>
             </c:forEach>
         </table>  
     </div>
-
+   
     <!-- ${info} -->
-    V stĺpci extrahované dáta je možné si stiahnut jednotlivé xml súbory, ktoré obsahujú extrahované
-    dáta z daného clánku. <br/>
+    V stĺpci extrahované dáta je možné si stiahnut jednotlivé xml súbory, ktoré obsahujú extrahované dáta z daného článku. <br/>
     Súbor so všetkými dátami si môžete stiahnuť:<strong> <c:forEach items="${zip}" var="zi"> ${zi}</c:forEach></strong>         
 
         <br/>
