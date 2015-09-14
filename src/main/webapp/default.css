@@ -133,7 +133,8 @@ a:visited {
 
 .language_icon{
     float: right;
-    margin-top: -50px;    
+    margin-top: -30px;
+    margin-right: 10px;
 }
 
 .popis {

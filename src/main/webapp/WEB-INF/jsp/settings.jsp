@@ -12,13 +12,13 @@
 </c:if>
 
 <div class="containerThreeColumn">    
-    <strong>Nastavenia - popis jednotlivých nastavení:</strong><br/><br/>
+    <strong><fmt:message key="settings.heading" /></strong><br/><br/>
     <ul>       
-        <li><strong>Počet stránok</strong> - nastavenie počtu stiahnutých článkov. </li>
-        <li><strong>Doba čakania (politeness)</strong> - nastavenie doby čakania medzi stiahnutím viacerých stránok v milisekundách. </li>
-        <li><strong>Vlastné URL</strong> - nastavenie filtra URL adresy, pomocou ktorého bude filtrovať sťahované stránky.</li>
-        <li><strong>Prahová hodnota</strong> - nastavenie váhy prahovej hodnoty pre čistenie stránky od boilerplate pomocou SST.</li>
-        <li><strong>Hĺbka zanorenia crawleru</strong> - celé číslo od 1 do N symbolizuje hĺbku zanorenia crawleru vrámci URL adresy. Napr.: na stránke "kultura.sme.sk/clanok1" je hĺbka zanorenia 1 časť URL adresy "sme.sk". Hĺbka zanorenia -1 znamená, že sa pôjde do maximálnej hĺbky URL.</li>
+        <li><strong><fmt:message key="settings.number" /></strong> - <fmt:message key="settings.number2" /></li>
+        <li><strong><fmt:message key="settings.wait" /></strong> - <fmt:message key="settings.wait2" /></li>
+        <li><strong><fmt:message key="settings.url" /></strong> - <fmt:message key="settings.url2" /></li>
+        <li><strong><fmt:message key="settings.thresh" /></strong> - <fmt:message key="settings.thresh2" /></li>
+        <li><strong><fmt:message key="settings.depth" /></strong> - <fmt:message key="settings.depth2" /></li>
     </ul>
 </div>
 
@@ -28,25 +28,25 @@
         <c:if test="${not empty error}">
             <table>
                 <tr>
-                    <th>Počet stránok:</th>
-                    <td><input type="text" name="setting1" title="Počet stránok na stiahnutie [celé číslo]." value="${settingsForm.setting1}"/></td>
+                    <th><fmt:message key="settings.number" />:</th>
+                    <td><input type="text" name="setting1" title="<fmt:message key="settings.number3" />" value="${settingsForm.setting1}"/></td>
                 </tr>
                 <tr>
-                    <th>Doba čakania (politeness):</th>
-                    <td><input type="text" name="setting2" title="Doba čakania medzi stiahnutím viacerých stránok [milisekundy]." value="${settingsForm.setting2}"/></td>
+                    <th><fmt:message key="settings.wait" />:</th>
+                    <td><input type="text" name="setting2" title="<fmt:message key="settings.wait3" />" value="${settingsForm.setting2}"/></td>
                 </tr>     
                 <tr>
-                    <th>Vlastné URL:</th>
-                    <td><input type="text" name="setting3" title="Filter URL adresy [URL adresa]." value="${settingsForm.setting3}"/> <label><input type="checkbox" name="setting4" title="Zapnúť používanie vlastného URL." id="checkbox1" value="${settingsForm.setting4}" value="${settingsForm.setting4}" <c:if test="${settingsForm.setting4}">checked="checked"</c:if>/> Zapnúť </label></td>
+                    <th><fmt:message key="settings.url" />:</th>
+                    <td><input type="text" name="setting3" title="<fmt:message key="settings.url3" />" value="${settingsForm.setting3}"/> <label><input type="checkbox" name="setting4" title="<fmt:message key="settings.url.on" />" id="checkbox1" value="${settingsForm.setting4}" value="${settingsForm.setting4}" <c:if test="${settingsForm.setting4}">checked="checked"</c:if>/> <fmt:message key="settings.url.on1" /> </label></td>
                     </tr>   
                     <tr>
-                        <th>Prahová hodnota:</th>
-                        <td><input type="text" name="setting5" title="Prahová hodnota pre SST [desatinné číslo medzi 0 až 1]." value="${settingsForm.setting5}"/></td>
+                        <th><fmt:message key="settings.thresh" />:</th>
+                    <td><input type="text" name="setting5" title="<fmt:message key="settings.thresh3" />" value="${settingsForm.setting5}"/></td>
                 </tr>    
 
                 <tr id="autoUpdate">
-                    <th>Hĺbka zanorenia crawleru:</th>
-                    <td><input type="text" name="setting6" title="Hĺbka zanorenia crawleru [celé číslo]." value="${settingsForm.setting6}"/></td>
+                    <th><fmt:message key="settings.depth" />:</th>
+                    <td><input type="text" name="setting6" title="<fmt:message key="settings.depth3" />" value="${settingsForm.setting6}"/></td>
                 </tr>    
 
             </table>        
@@ -54,30 +54,30 @@
         <c:if test="${empty error}">
             <table>
                 <tr>
-                    <th>Počet stránok:</th>
-                    <td><input type="text" name="setting1" title="Počet stránok na stiahnutie [celé číslo]." value="${settingsForm.setting1}"/></td>
+                    <th><fmt:message key="settings.number" />:</th>
+                    <td><input type="text" name="setting1" title="<fmt:message key="settings.number3" />" value="${settingsForm.setting1}"/></td>
                 </tr>
                 <tr>
-                    <th>Doba čakania (politeness):</th>
-                    <td><input type="text" name="setting2" title="Doba čakania medzi stiahnutím viacerých stránok [milisekundy]." value="${settingsForm.setting2}"/></td>
+                    <th><fmt:message key="settings.wait" />:</th>
+                    <td><input type="text" name="setting2" title="<fmt:message key="settings.wait3" />" value="${settingsForm.setting2}"/></td>
                 </tr>     
                 <tr>
-                    <th>Vlastné URL:</th>
-                    <td><input type="text" name="setting3" title="Filter URL adresy [URL adresa]." value="${settingsForm.setting3}"/> <label><input type="checkbox" name="setting4" title="Zapnúť používanie vlastného URL." id="checkbox1" value="${settingsForm.setting4}" value="${settingsForm.setting4}" <c:if test="${settingsForm.setting4}">checked="checked"</c:if>/> Zapnúť </label></td>
+                    <th><fmt:message key="settings.url" />:</th>
+                    <td><input type="text" name="setting3" title="<fmt:message key="settings.url3" />" value="${settingsForm.setting3}"/> <label><input type="checkbox" name="setting4" title="<fmt:message key="settings.url.on" />" id="checkbox1" value="${settingsForm.setting4}" value="${settingsForm.setting4}" <c:if test="${settingsForm.setting4}">checked="checked"</c:if>/> <fmt:message key="settings.url.on1" /> </label></td>
                     </tr>   
                     <tr>
-                        <th>Prahová hodnota:</th>
-                        <td><input type="text" name="setting5" title="Prahová hodnota pre SST [desatinné číslo medzi 0 až 1]." value="${settingsForm.setting5}"/></td>
+                        <th><fmt:message key="settings.thresh" />:</th>
+                    <td><input type="text" name="setting5" title="<fmt:message key="settings.thresh3" />" value="${settingsForm.setting5}"/></td>
                 </tr>    
 
                 <tr id="autoUpdate">
-                    <th>Hĺbka zanorenia crawleru:</th>
-                    <td><input type="text" name="setting6" title="Hĺbka zanorenia crawleru [celé číslo]." value="${settingsForm.setting6}"/></td>
+                    <th><fmt:message key="settings.depth" />:</th>
+                    <td><input type="text" name="setting6" title="<fmt:message key="settings.depth3" />" value="${settingsForm.setting6}"/></td>
                 </tr>    
             </table>              
         </c:if>
         <p align="center">
-            <input type="Submit" value="" title="Uložiť nastavenia" name="submit" class="save_icon"/>    
+            <input type="Submit" value="" title="<fmt:message key="settings.save" />" name="submit" class="save_icon"/>    
         </p>
     </form>
 </div>

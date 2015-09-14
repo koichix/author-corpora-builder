@@ -18,7 +18,8 @@
         <link rel="stylesheet" href="<c:url value="jquery/jquery-ui.css"/>">
         <script src="<c:url value="jquery/jquery.easing.js"/>"></script>
         <script src="<c:url value="jquery/jqueryFileTree.js"/>"></script>
-        <link rel="stylesheet" href="<c:url value="jquery/jqueryFileTree.css"/>">      
+        <link rel="stylesheet" href="<c:url value="jquery/jqueryFileTree.css"/>">   
+        <script src="<c:url value="jquery/dropdown/jquery.dd.min.js"/>"></script>  
         <script>
             $(function () {
                 $(document).tooltip();
@@ -101,6 +102,13 @@
                 $("select#language").css("background-image", 'url(images/design/' + $("select#language").val() + '.png)');
             });
 
+            $(document).ready(function (e) {
+                try {
+                    $("body select").msDropDown();
+                } catch (e) {
+                    alert(e.message);
+                }
+            });
         </script>
 
 
@@ -118,10 +126,10 @@
             <h1><a href="<c:url value="input"/>" style="color:#605D55 !important;">Authorship corpora builder</a></h1>           
 
             <!--language switcher -->
-            <form>
-                <select id="language" name="language" class="language_icon" onchange="submit()">
-                    <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-                    <option value="sk" ${language == 'sk' ? 'selected' : ''}>Slovak</option>
+            <form class="language_icon">
+                <select id="language" name="language"  onchange="submit()">
+                    <option value="en" data-image="images/design/en.png" ${language == 'en' ? 'selected' : ''}></option>
+                    <option value="sk" data-image="images/design/sk.png" ${language == 'sk' ? 'selected' : ''}></option>
                 </select>
             </form>  
 
