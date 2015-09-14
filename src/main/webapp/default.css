@@ -538,3 +538,6 @@ ul {
     width: 25px;height: 25px; margin-bottom: -0.25em;
     margin-right: 5px;
 }
+.right_column a{
+    color:black !important;
+}
