@@ -1,0 +1,22 @@
+blesk, cuketka, lidovky, cas, varecha
+    
+nefunkcne:
+java -jar wsd.jar -d -s http://www.animefest.cz/forum/vzkazy-2012/praha-brno-odjezd-ve-1242 -c http://www.animefest.cz/forum/
+java -jar wsd.jar -d -s http://konzolista.tiscali.cz/forum/comments?link=uncharted-kn3i -c http://konzolista.tiscali.cz/forum/
+java -jar wsd.jar -d -s http://debata.pravda.sk/debata/371047-rusko-syria-zostane-syriou-s-asadom-ci-bez-neho/ -c http://debata.pravda.sk/debata/
+java -jar wsd.jar -d -s http://www.lidovky.cz/diskuse.aspx?iddiskuse=A151018_123601_ln_zahranici_ele -c http://www.lidovky.cz/diskuse.aspx
+java -jar wsd.jar -d -s http://diskuse.tiscali.cz/games/clanek/zaklinac-3-srdce-z-kamene-recenze-267728/ -c http://diskuse.tiscali.cz/games/clanek/
+java -jar wsd.jar -d -s http://www.fony.sk/forum/clanky/8622-apple-iphone-6-zbohom-jablkovym-mobilom-do-jednej-ruky -c http://www.fony.sk/forum/clanky/
+java -jar wsd.jar -d -s http://www.denik.cz/diskuse/chovanec-stat-byl-pro-mnohe-dojnou-kravou-to-musi-skoncit.html -c http://www.denik.cz/diskuse/   
+java -jar wsd.jar -d -s http://www.prozeny.cz/komentare/zdravi-a-zivotni-styl/novinky-ve-cviceni/42791-fitness-trend-30-denni-vyzvy-skutecne-vam-pomohou-vytvarovat-telo -c http://www.prozeny.cz/komentare/
+java -jar wsd.jar -d -s http://www.animefest.cz/forum/vzkazy-2012/praha-brno-odjezd-ve-1242 -c http://www.animefest.cz/forum/
+java -jar wsd.jar -d -s http://www.psmania.sk/threads/need-for-speed-bez-dlc-mikrotransakcii-a-split-screenu.22671/ -c http://www.psmania.sk/threads/
+java -jar wsd.jar -d -s http://www.cviceni-doma.cz/diskuse/viewtopic.php?f=13&t=96 -c http://www.cviceni-doma.cz/diskuse/
+java -jar wsd.jar -d -s http://www.rodina.cz/diskuse3000.htm -c http://www.rodina.cz/diskuse
+java -jar wsd.jar -d -s http://diskuse.dama.cz/d.php?d=5019 -c http://diskuse.dama.cz/d
+java -jar wsd.jar -d -s http://www.parabola.cz/forum/topic-86710/ -c http://www.parabola.cz/forum/topic
+java -jar wsd.jar -d -s http://www.nakole.cz/diskuse/20166-co-vas-pobavilo-potesilo-91.html -c http://www.nakole.cz/diskuse/
+java -jar wsd.jar -d -s http://www.mrk.cz/diskuse.php?id=738602 -c http://www.mrk.cz/diskuse.php
+java -jar wsd.jar -d -s http://www.radia.sk/diskusia/temy/1411_dvb-t-na-slovensku.html -c http://www.radia.sk/diskusia/temy/
+java -jar wsd.jar -d -s http://www.zdravie.sk/forum/2209334/nechcem-s-nim-spat/ -c http://www.zdravie.sk/forum/
+java -jar wsd.jar -d -s https://www.modrykonik.sk/forum/moje-zdravie/rosacea-2/ -c https://www.modrykonik.sk/forum/moje-zdravie/

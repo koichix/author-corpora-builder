@@ -11,7 +11,8 @@
     <br/> <br/> 
     <fmt:message key="preview.download" /> <a href="https://github.com/koichix/author-corpora-builder"  target="_blank">GIThub.</a>  
     <br/>
-    <fmt:message key="preview.download2" /> <a href="getfile?name=corpus/author_corpus.zip">author_corpus.zip</a> 
+    <fmt:message key="preview.download2" /> <a href="getfile?name=corpus/author_corpus_v1.zip">version_1.zip</a>,  
+    <a href="getfile?name=corpus/author_corpus_v2.zip">version_2.zip</a> 
     <br/> 
 
 </div>
