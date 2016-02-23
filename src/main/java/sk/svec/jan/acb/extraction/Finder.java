@@ -166,7 +166,7 @@ public class Finder {
 
                 //ocisti datum
                 date = findDateRegex(date);
-
+                
                 //ocisti nadpis (napr idnes.cz)
                 URL url = new URL(link);
                 String host = url.getHost();

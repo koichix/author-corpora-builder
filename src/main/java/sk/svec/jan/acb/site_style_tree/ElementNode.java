@@ -94,9 +94,9 @@ public class ElementNode {
                 nodeImp = 0.99;
             }
 
-            if (this.node.nodeName().compareTo("title") == 0) {
-                nodeImp = 0.99;
-            }
+//            if (this.node.nodeName().compareTo("title") == 0) {
+//                nodeImp = 0.99;
+//            }
         }
         return nodeImp;
     }

@@ -478,21 +478,21 @@ public class SiteStyleTree {
         }
     }
 
-    public String example() throws Exception {
-        buildStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
-        StyleNode styleNodeA = getRootSn();
-        setStyleNodeX(styleNodeA);
-        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
-        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
-        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
-        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
-        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
-        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
-        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
-        StyleNode bssFinal = buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
-
-        return bssFinal.toString();
-    }
+//    public String example() throws Exception {
+//        buildStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
+//        StyleNode styleNodeA = getRootSn();
+//        setStyleNodeX(styleNodeA);
+//        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
+//        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
+//        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
+//        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/18.html");
+//        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
+//        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
+//        buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
+//        StyleNode bssFinal = buildSiteStyleTree("c:/Users/Koichi/Documents/NetBeansProjects/1test/20.html");
+//
+//        return bssFinal.toString();
+//    }
 
 //    public static void main(String[] args) throws Exception {
 //        String p = "output/sk/cas/";

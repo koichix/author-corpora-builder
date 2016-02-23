@@ -113,7 +113,7 @@ public class CrawlerConfig extends WebCrawler {
             //Vynulujeme pocitadlo, velmi dolezite
             count = 0;
         }
-
+        
         try {
             md = MessageDigest.getInstance("MD5");
             try {

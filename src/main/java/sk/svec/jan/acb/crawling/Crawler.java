@@ -54,8 +54,11 @@ public class Crawler {
          */
         config.setPolitenessDelay(Integer.parseInt(Main.getResourceBundle().getString("PolitenessDelay")));
         config.setMaxPagesToFetch(-1);
+        config.setResumableCrawling(false);
 
         config.setUserAgentString("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36");
+        //vypis nastaveni
+        //System.out.println(config);
 
         /*
          * Instantiate the controller for this crawl.
