@@ -10,7 +10,6 @@ import java.util.List;
 import sk.svec.jan.acb.cleaning.HtmlCleaner;
 import sk.svec.jan.acb.extraction.DiscussionFinder;
 import sk.svec.jan.acb.extraction.Finder;
-import static sk.svec.jan.acb.main.Main.diskusia;
 import sk.svec.jan.acb.site_style_tree.SiteStyleTree;
 import sk.svec.jan.acb.utility.CreateZip;
 import sk.svec.jan.acb.utility.TravelDirectory;
@@ -25,11 +24,7 @@ public class Analyzer_run {
 
     public void analyze(boolean disc) throws Exception {
         this.path = "output/";
-        if (disc) {
-            diskusia = true;
-        } else {
-            diskusia = false;
-        }
+      
 
         //travel all the directories
         TravelDirectory travelDirectory = new TravelDirectory(path);

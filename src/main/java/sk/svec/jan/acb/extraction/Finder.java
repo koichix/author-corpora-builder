@@ -166,7 +166,7 @@ public class Finder {
 
                 //ocisti datum
                 date = findDateRegex(date);
-                
+
                 //ocisti nadpis (napr idnes.cz)
                 URL url = new URL(link);
                 String host = url.getHost();
@@ -201,9 +201,13 @@ public class Finder {
                 StringTokenizer st = new StringTokenizer(path, "/");
                 //cesta k suboru output/sk/cas/ napriklad
                 String outputPath = "";
-                for (int j = 0; j < 3; j++) {
-                    outputPath += st.nextToken() + "/";
+                if (st.countTokens() > 3) {
+                    for (int j = 0; j < 3; j++) {
+                        outputPath += st.nextToken() + "/";
 //                    System.out.println(st.nextToken());
+                    }
+                } else {
+                    outputPath = path;
                 }
                 String xmlAuthorPath = outputPath + "author/" + xmlFileName;
                 new File(outputPath + "author/").mkdirs();
